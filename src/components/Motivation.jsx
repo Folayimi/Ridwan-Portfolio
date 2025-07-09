@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { MdEmail } from "react-icons/md";
+import Link from "next/link";
 
 const Motivation = () => {
   return (
@@ -46,10 +47,12 @@ const Motivation = () => {
         </div>
         <div className="w-full cflexss text-[14px] font-[500] text-[#6E6E6E] leading-relaxed gap-[10px]">
           <p>Got a great idea? Let’s create something amazing together!.</p>
-          <button className="flexsm gap-[20px] bg-[#1B1B1B] text-white px-[50px] py-[10px] rounded-full hover:scale-102 transition-transform duration-300 cursor-pointer">
-            <p>Drop an email at ridwanfolayimi@gmail.com</p>
-            <MdEmail className="w-6 h-6 text-white" />
-          </button>
+          <Link href="mailto:ridwanfolayimi@gmail.com">
+            <button className="flexsm gap-[20px] bg-[#1B1B1B] text-white px-[50px] py-[10px] rounded-full hover:scale-102 transition-transform duration-300 cursor-pointer">
+              <p>Drop an email at ridwanfolayimi@gmail.com</p>
+              <MdEmail className="w-6 h-6 text-white" />
+            </button>
+          </Link>
         </div>
       </div>
     </>

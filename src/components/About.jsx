@@ -16,16 +16,22 @@ const About = () => {
           </h1>
           {/* <p className="mt-[-15px]">ridwanfolayimi@gmail.com</p> */}
           <p className="text-[18px] text-[#6E6E6E] leading-[1.6]">
-            Hi, I'm a passionate Frontend Engineer with a love for building
-            responsive, user-friendly web and mobile apps. I work with tools
-            like React.js, Next.js, Tailwind CSS, React Native, and a bit of
-            backend magic using Flask and Python.
+            <span className="text-[#1B1B1B] font-[500]">
+              I am a passionate Frontend Engineer with a love for building
+              responsive, user-friendly web and mobile apps.
+            </span>{" "}
+            I work with tools like React.js, Next.js, Tailwind CSS, React
+            Native, and a bit of backend magic using Flask and Python.
           </p>
           <p className="text-[18px] text-[#6E6E6E] leading-[1.6] mt-[30px]">
-            With a background in Mechatronics Engineering, I bring a unique
-            blend of creativity, logic, and system thinking into everything I
-            build. I care deeply about clean design, smooth user experiences,
-            and writing code that just makes sense.
+            <span className="text-[#1B1B1B] font-[500]">
+              {" "}
+              With a background in Mechatronics Engineering, I bring a unique
+              blend of creativity, logic, and system thinking into everything I
+              build.
+            </span>{" "}
+            I care deeply about clean design, smooth user experiences, and
+            writing code that just makes sense.
           </p>
           <div className="flexmm w-full mt-[50px]">
             <div className="group w-fit flexmm">
