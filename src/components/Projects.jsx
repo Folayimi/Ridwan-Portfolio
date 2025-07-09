@@ -35,6 +35,13 @@ const Projects = () => {
       link: "",
     },
     {
+      title: "Shinzoku",
+      description:
+        "In the days of old, the world thrived, life thrived and powerful creatures were born, then it happened, a great invasion the likes of which the world had never seen before, the world was thrown into chaos, and the creatures were forced to flee to a new world.",
+      image: "/shinzoku.PNG",
+      link: "",
+    },
+    {
       title: "360 Shotitz Photography",
       description:
         "Capturing life’s special moments that last a lifetime with professionalism and innovation since 2013, where every shutter click captures a narrative waiting to be unveiled.",
