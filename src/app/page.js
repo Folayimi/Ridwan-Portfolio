@@ -52,7 +52,7 @@ export default function Home() {
 
               {/* Static image above */}
               <Image
-                src="/Avatar.png"
+                src="/Avatar.PNG"
                 alt="Profile Picture"
                 width={1000}
                 height={1000}
