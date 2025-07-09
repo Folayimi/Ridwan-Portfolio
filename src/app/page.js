@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import HeroSection from "@/components/HeroSection";
 import Stack from "@/components/Stack";
 import About from "@/components/About";
 import Services from "@/components/Services";
@@ -20,80 +21,7 @@ export default function Home() {
       } cflexss px-[100px] pt-[100px]`}
       id="home"
     >
-      <div className="w-full flexsm text-black border-l-[1px] border-r-[1px] rounded-[20px] p-[50px]">
-        <div className="w-1/2 cflexss pb-[20px] gap-[20px]">
-          <div className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-4 h-4 text-[#3f4a3c] animate-pulse"
-            >
-              <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
-            </svg>
-            <div className="text-[12px] font-semibold text-white tracking-wide uppercase">
-              Welcome to my portfolio
-            </div>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-4 h-4 text-[#3f4a3c] animate-pulse"
-            >
-              <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
-            </svg>
-          </div>
-
-          <div className="flexmm mt-[10px]">
-            <div className="relative w-[65px] h-[65px]">
-              {/* Animated background behind */}
-              <div className="absolute inset-0 rounded-full bg-[#57AF46] shadow-lg animate-[softPulse_3s_ease-in-out_infinite] z-0" />
-
-              {/* Static image above */}
-              <Image
-                src="/Avatar.PNG"
-                alt="Profile Picture"
-                width={1000}
-                height={1000}
-                className="absolute top-0 left-0 z-10 rounded-full object-cover w-[65px] h-[65px] hover:scale-108 transition-transform duration-500"
-              />
-            </div>
-          </div>
-
-          <h1 className="text-[35px] font-bold">
-            <span className="block">Hey, I'm Ridwan Ogunlade.</span>
-            <span className="block">
-              Software Engineer and Creative Technologist
-            </span>
-          </h1>
-
-          <p className="text-[18px] text-[#6E6E6E] leading-relaxed">
-            Bringing an interdisciplinary edge to development, where creative
-            design meets structured logic and analysis.
-          </p>
-
-          <div className="flexsm gap-[25px] text-[16px] font-[500]">
-            <button className="bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
-              Hire Me!
-            </button>
-            <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
-              <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
-              Let’s build something together
-            </div>
-          </div>
-        </div>
-
-        <div className="w-1/2 h-full cflexmm pl-[10%]">
-          <Image
-            src="/buildingW1.svg"
-            alt="Profile Picture"
-            width={1000}
-            height={1000}
-            className="object-cover w-[80%] hover:scale-105 ml-[-10%] transition-transform duration-500"
-          />
-        </div>
-      </div>
+      <HeroSection />
       <Services />
       <About />
       <Stack />
