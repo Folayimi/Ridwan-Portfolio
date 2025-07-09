@@ -38,7 +38,7 @@ const About = () => {
                   className="w-full h-full object-cover rounded-[5px]"
                 />
                 <Image
-                  src={"/pin.png"}
+                  src={"/pin.PNG"}
                   alt="Pin Icon"
                   width={100}
                   height={100}
@@ -54,7 +54,7 @@ const About = () => {
                   className="w-full h-full object-cover rounded-[5px]"
                 />
                 <Image
-                  src={"/pin.png"}
+                  src={"/pin.PNG"}
                   alt="Pin Icon"
                   width={100}
                   height={100}

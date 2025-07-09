@@ -10,56 +10,56 @@ const Projects = () => {
       title: "Alps",
       description:
         "A platform designed to simplify documentation Organize playlists and streamline feedback reviews, All while empowering your customers effortlessly.",
-      image: "/alpsFrontPage.png",
+      image: "/alpsFrontPage.PNG",
       link: "",
     },
     {
       title: "Nifinspired",
       description:
         "Our products harness the pure power of nature, utilizing organic ingredients that nurture your skin without harmful chemicals. ",
-      image: "/nifinspired.png",
+      image: "/nifinspired.PNG",
       link: "",
     },
     {
       title: "King David Elite",
       description:
         "The King David Elites marketplace is where you find only the most exclusive and highest quality real estate, automobiles, luxury services, and collectibles.",
-      image: "/king-david-main.png",
+      image: "/king-david-main.PNG",
       link: "",
     },
     {
       title: "Curious Kids",
       description:
         "A leading educational platform that sparks curiosity, fosters creativity, and inspires young minds to explore the wonders of the world.",
-      image: "/curiouzkidz.png",
+      image: "/curiouzkidz.PNG",
       link: "",
     },
     {
       title: "360 Shotitz Photography",
       description:
         "Capturing life’s special moments that last a lifetime with professionalism and innovation since 2013, where every shutter click captures a narrative waiting to be unveiled.",
-      image: "/360-shotitz.png",
+      image: "/360-shotitz.PNG",
       link: "",
     },
     {
       title: "Remap Link",
       description:
         "By meticulously fine-tuning a vehicle's Engine Control Unit (ECU), we have the capability to extract noteworthy enhancements in power, torque, and fuel efficiency.",
-      image: "/remap-link.png",
+      image: "/remap-link.PNG",
       link: "",
     },
     {
       title: "Portfolio",
       description:
         "Developed responsive, user portfolio showcasing the projects and skills of the user, built with Next.js and Tailwind CSS.",
-      image: "/clarice-portfolio.png",
+      image: "/clarice-portfolio.PNG",
       link: "",
     },
     {
       title: "African Made Items",
       description:
         "Showcasing and selling of varieties of African made items that are durable and cost effective in areas such as Fashion, Arts, Home Decor, Accessories e.t.c",
-      image: "/portfolio-africa.png",
+      image: "/portfolio-africa.PNG",
       link: "",
     },
   ];

@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const certificates = [
   {
-    src: "/udacity-certificate.png",
+    src: "/udacity-certificate.PNG",
     alt: "Udacity Certificate",
     title: "ALX-T Full Stack Developer – UDACITY",
   },
   {
-    src: "/hackathon-certificate.png",
+    src: "/hackathon-certificate.PNG",
     alt: "Hackathon Certificate",
     title: "Certificate Of Particiapation – HACKLAB",
   },
