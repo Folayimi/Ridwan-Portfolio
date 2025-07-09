@@ -1,103 +1,107 @@
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import Stack from "@/components/Stack";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Projects from "@/components/Projects";
+import WorkExperience from "@/components/WorkExperience";
+import Motivation from "@/components/Motivation";
+import Certificates from "@/components/Certificates";
+import ContactForm from "@/components/Contact";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isDarkMode, setDarkMode] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <main
+      className={`min-h-screen transition-colors duration-500 ${
+        isDarkMode ? "bg-[#0d0d0d] text-white" : "bg-white text-black"
+      } cflexss px-[100px] pt-[100px]`}
+      id="home"
+    >
+      <div className="w-full flexsm text-black border-l-[1px] border-r-[1px] rounded-[20px] p-[50px]">
+        <div className="w-1/2 cflexss pb-[20px] gap-[20px]">
+          <div className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4 text-[#3f4a3c] animate-pulse"
+            >
+              <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
+            </svg>
+            <div className="text-[12px] font-semibold text-white tracking-wide uppercase">
+              Welcome to my portfolio
+            </div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4 text-[#3f4a3c] animate-pulse"
+            >
+              <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
+            </svg>
+          </div>
+
+          <div className="flexmm mt-[10px]">
+            <div className="relative w-[65px] h-[65px]">
+              {/* Animated background behind */}
+              <div className="absolute inset-0 rounded-full bg-[#57AF46] shadow-lg animate-[softPulse_3s_ease-in-out_infinite] z-0" />
+
+              {/* Static image above */}
+              <Image
+                src="/Avatar.png"
+                alt="Profile Picture"
+                width={1000}
+                height={1000}
+                className="absolute top-0 left-0 z-10 rounded-full object-cover w-[65px] h-[65px] hover:scale-108 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          <h1 className="text-[35px] font-bold">
+            <span className="block">Hey, I'm Ridwan Ogunlade.</span>
+            <span className="block">
+              Software Engineer and Creative Technologist
+            </span>
+          </h1>
+
+          <p className="text-[18px] text-[#6E6E6E] leading-relaxed">
+            Bringing an interdisciplinary edge to development, where creative
+            design meets structured logic and analysis.
+          </p>
+
+          <div className="flexsm gap-[25px] text-[16px] font-[500]">
+            <button className="bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
+              Hire Me!
+            </button>
+            <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
+              <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
+              Let’s build something together
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <div className="w-1/2 h-full cflexmm pl-[10%]">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/buildingW1.svg"
+            alt="Profile Picture"
+            width={1000}
+            height={1000}
+            className="object-cover w-[80%] hover:scale-105 ml-[-10%] transition-transform duration-500"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </div>
+      <Services />
+      <About />
+      <Stack />
+      <Projects />
+      <WorkExperience />
+      <Motivation />
+      <Certificates />
+      <ContactForm />
+    </main>
   );
 }
