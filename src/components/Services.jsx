@@ -33,7 +33,7 @@ const Services = () => {
   return (
     <section className="w-full mt-[50px] py-[20px]">
       <h1 className="text-[25px] text-center font-[500] mb-[20px]">
-        Things I Love to Build
+        Things I Love To Do
       </h1>
 
       <div className="w-full flexsm overflow-hidden">
