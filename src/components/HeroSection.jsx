@@ -4,29 +4,31 @@ import Image from "next/image";
 const HeroSection = () => {
   return (
     <>
-      <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] pt-[50px] md:p-[20px] lg:p-[50px]">
+      <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] mt-[-25px] md:pt-0 md:p-[20px] lg:p-[50px]">
         <div className="w-full lg:w-[60%] flex flex-col items-center md:items-start justify-center pb-[20px] gap-[20px]">
-          <div className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-4 h-4 text-[#3f4a3c] animate-pulse"
-            >
-              <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
-            </svg>
-            <div className="text-[12px] font-semibold text-white tracking-wide uppercase">
-              Welcome to my portfolio
-            </div>
+          <div className="hidden md:block">
+            <div className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-4 h-4 text-[#3f4a3c] animate-pulse"
+              >
+                <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
+              </svg>
+              <div className="text-[12px] font-semibold text-white tracking-wide uppercase">
+                Welcome to my portfolio
+              </div>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-4 h-4 text-[#3f4a3c] animate-pulse"
-            >
-              <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-4 h-4 text-[#3f4a3c] animate-pulse"
+              >
+                <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
+              </svg>
+            </div>
           </div>
 
           <div className="w-full flexsm mt-[10px]">

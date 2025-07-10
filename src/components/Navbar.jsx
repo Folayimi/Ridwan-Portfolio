@@ -98,8 +98,8 @@ const Navbar = () => {
   return (
     <>
       <div className="w-full">
-        <div className="hidden md:block w-full flexmm pt-[30px] px-[50px] fixed top-0 left-0 z-[999]">
-          <ul className="bg-white/10 border-[1px] text-[12px] flexsm px-[20px] py-[5px] rounded-full shadow-sm backdrop-blur-sm">
+        <div className="w-full flex justify-between md:justify-center items-center pt-[20px] md:pt-[30px] px-[20px] md:px-[50px] fixed top-0 left-0 z-[999]">
+          <ul className="bg-white/10 border-[1px] text-[12px] flexsm md:px-[20px] md:py-[5px] rounded-full shadow-sm backdrop-blur-sm">
             {NavItems.map((item, index) => {
               return (
                 <>
@@ -107,7 +107,7 @@ const Navbar = () => {
                     <li key={index} className="relative flexmm px-[10px]">
                       <Link
                         href={item.link}
-                        className="group flexmm px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-200"
+                        className="group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-200"
                       >
                         {item.icon}
                         <div
@@ -118,14 +118,14 @@ const Navbar = () => {
                           {item.label}
                         </div>
                       </Link>
-                      <div className="h-[20px] bg-[#6E6E6E]/40 w-[1px] ml-[20px]" />
+                      <div className="hidden md:block h-[20px] bg-[#6E6E6E]/40 w-[1px] ml-[20px]" />
                     </li>
                   ) : item.link === "#projects" ? (
                     <li key={index} className="relative flexmm px-[10px]">
-                      <div className="h-[20px] bg-[#6E6E6E]/40 w-[1px] mr-[20px]" />
+                      <div className="hidden md:block h-[20px] bg-[#6E6E6E]/40 w-[1px] mr-[20px]" />
                       <Link
                         href={item.link}
-                        className={`group flexmm px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-200`}
+                        className={`group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-200`}
                       >
                         {item.icon}
                         <div
@@ -138,11 +138,14 @@ const Navbar = () => {
                       </Link>
                     </li>
                   ) : item.link.startsWith("https") ? (
-                    <li key={index} className="relative px-[10px]">
+                    <li
+                      key={index}
+                      className="hidden md:block relative px-[10px]"
+                    >
                       <Link
                         href={item.link}
                         target="_blank"
-                        className={`group flexmm px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-200`}
+                        className={`group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-200`}
                       >
                         {item.icon}
                         <div
@@ -158,7 +161,7 @@ const Navbar = () => {
                     <li key={index} className="relative px-[10px]">
                       <Link
                         href={item.link}
-                        className="group flexmm px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-200"
+                        className="group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-200"
                       >
                         {item.icon}
                         <div
@@ -174,12 +177,17 @@ const Navbar = () => {
                 </>
               );
             })}
-            <Link href="#contact">
+            <Link href="#contact" className="hidden md:block">
               <button className="px-[15px] flexmm hover:px-[20px] text-[14px] py-[12px] bg-[#1B1B1B] text-white rounded-[15px] cursor-pointer transition-all duration-300">
                 Let's Connect
               </button>
             </Link>
           </ul>
+          <Link href="#contact" className="md:hidden">
+            <button className="px-[15px] flexmm hover:px-[20px] text-[12px] font-[500] py-[12px] bg-[#1B1B1B] text-white rounded-[15px] cursor-pointer transition-all duration-300">
+              Let's Connect
+            </button>
+          </Link>
         </div>
       </div>
     </>
