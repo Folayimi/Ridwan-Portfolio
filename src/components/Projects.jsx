@@ -139,9 +139,9 @@ const Projects = () => {
             );
           })}
         </div>
-        <div className="flexmm w-full">
+        <div className="flex items-center justify-start md:justify-center w-full">
           <button
-            className="group text-center flexmm gap-[10px] mt-[20px] cursor-pointer rounded-[10px] bg-[#1B1B1B] text-white px-[20px] py-[10px]"
+            className="group text-center text-[14px] md:text-[16px] flexmm gap-[10px] mt-[10px] md:mt-[20px] cursor-pointer rounded-[10px] bg-[#1B1B1B] text-white px-[20px] py-[10px]"
             onClick={() => setSeeMore(!seeMore)}
           >
             {seeMore ? "View Less" : "View All"}
