@@ -73,7 +73,7 @@ const Projects = () => {
   return (
     <>
       <div
-        className="w-full cflexss justify-start gap-[30px] mt-[150px] md:p-[20px] md:px-[150px] md:border-l-[1px] md:border-r-[1px] rounded-[20px]"
+        className="w-full cflexss justify-start gap-[30px] mt-[150px] md:p-[20px] md:px-[100px] lg:px-[150px] md:border-l-[1px] md:border-r-[1px] rounded-[20px]"
         id="projects"
       >
         <h1 className="w-full text-[20px] md:text-[25px] text-center font-[500] mb-[20px]">
