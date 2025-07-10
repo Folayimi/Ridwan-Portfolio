@@ -18,7 +18,7 @@ export default function Home() {
     <main
       className={`min-h-screen transition-colors duration-500 ${
         isDarkMode ? "bg-[#0d0d0d] text-white" : "bg-white text-black"
-      } cflexss px-[100px] pt-[100px]`}
+      } cflexss px-[20px] md:px-[100px] pt-[100px]`}
       id="home"
     >
       <HeroSection />

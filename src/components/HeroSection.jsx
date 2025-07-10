@@ -4,8 +4,8 @@ import Image from "next/image";
 const HeroSection = () => {
   return (
     <>
-      <div className="w-full flexsm text-black border-l-[1px] border-r-[1px] rounded-[20px] p-[50px]">
-        <div className="w-1/2 cflexss pb-[20px] gap-[20px]">
+      <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] pt-[50px] md:p-[20px] lg:p-[50px]">
+        <div className="w-full lg:w-[60%] flex flex-col items-center md:items-start justify-center pb-[20px] gap-[20px]">
           <div className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const HeroSection = () => {
             </svg>
           </div>
 
-          <div className="flexmm mt-[10px]">
+          <div className="w-full flexsm mt-[10px]">
             <div className="relative w-[65px] h-[65px]">
               {/* Animated background behind */}
               <div className="absolute inset-0 rounded-full bg-[#57AF46] shadow-lg animate-[softPulse_3s_ease-in-out_infinite] z-0" />
@@ -45,37 +45,68 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <h1 className="text-[35px] font-bold">
+          <h1 className="w-full text-[25px] md:text-[30px] lg:text-[35px] font-bold">
             <span className="block">Hey, I'm Ridwan Ogunlade.</span>
             <span className="block">
               Software Engineer and Creative Technologist
             </span>
           </h1>
 
-          <p className="text-[18px] text-[#6E6E6E] leading-relaxed">
-            Bringing an interdisciplinary edge to development, where creative
-            design meets structured logic and analysis.
-          </p>
+          <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-start md:justify-between gap-[20px] text-[18px] text-[#6E6E6E] leading-relaxed">
+            <div className="w-full cflexss gap-[20px]">
+              <p className="w-full">
+                Bringing an interdisciplinary edge to development, where
+                creative design meets structured logic and analysis.
+              </p>
+              <div className="hidden md:block lg:hidden">
+                <div className="flexsm gap-[25px] text-[16px] font-[500]">
+                  <button className="bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    Hire Me!
+                  </button>
+                  <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
+                    <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
+                    Let’s build something together
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-[60%] md:w-[25%] lg:w-0 flexmm">
+              <Image
+                src="/buildingW1.svg"
+                alt="Profile Picture"
+                width={1000}
+                height={1000}
+                className="block lg:hidden object-cover w-full hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
 
-          <div className="flexsm gap-[25px] text-[16px] font-[500]">
-            <button className="bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
-              Hire Me!
-            </button>
-            <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
-              <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
-              Let’s build something together
+          <div className="w-full block md:hidden lg:block mt-[20px]">
+            <div className="w-full flex justify-start items-start flex-wrap gap-[20px] lg:gap-[10px] text-[16px] font-[500]">
+              <button className="hidden lg:block bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                Hire Me!
+              </button>
+              <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
+                <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
+                Let’s build something together
+              </div>
+              <button className="lg:hidden bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                Hire Me!
+              </button>
             </div>
           </div>
         </div>
 
-        <div className="w-1/2 h-full cflexmm pl-[10%]">
-          <Image
-            src="/buildingW1.svg"
-            alt="Profile Picture"
-            width={1000}
-            height={1000}
-            className="object-cover w-[80%] hover:scale-105 ml-[-10%] transition-transform duration-500"
-          />
+        <div className="hidden lg:block w-[40%] h-full">
+          <div className="h-full flexmm">
+            <Image
+              src="/buildingW1.svg"
+              alt="Profile Picture"
+              width={1000}
+              height={1000}
+              className="object-cover w-[80%] hover:scale-105 transition-transform duration-500"
+            />
+          </div>
         </div>
       </div>
     </>
