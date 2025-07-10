@@ -31,8 +31,8 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full mt-[50px] py-[20px]">
-      <h1 className="text-[25px] text-center font-[500] mb-[20px]">
+    <section className="w-full mt-[30px] md:mt-[50px] py-[20px]">
+      <h1 className="text-[20px] md:text-[25px] text-center font-[500] mb-[30px] md:mb-[20px]">
         Things I Love To Do
       </h1>
 
@@ -41,7 +41,7 @@ const Services = () => {
           {[...MyServices, ...MyServices].map((service, index) => (
             <div
               key={index}
-              className="cflexmm bg-white w-[400px] h-auto p-6 mx-[30px] rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default"
+              className="cflexmm bg-white w-[250px] md:w-[300px] h-auto p-6 mx-[10px] md:mx-[30px] rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default"
             >
               <div className="w-[100px] h-[100px] mb-5 relative">
                 <Image
@@ -51,10 +51,10 @@ const Services = () => {
                   className="object-contain"
                 />
               </div>
-              <h2 className="text-xl font-semibold mb-3 group-hover:text-[#3f4a3c] transition-colors">
+              <h2 className="w-full text-xl text-left font-semibold mb-3 group-hover:text-[#3f4a3c] transition-colors">
                 {service.title}
               </h2>
-              <p className="text-[#6E6E6E] text-center text-sm leading-relaxed">
+              <p className="text-[#6E6E6E] text-sm leading-relaxed">
                 {service.description}
               </p>
             </div>
