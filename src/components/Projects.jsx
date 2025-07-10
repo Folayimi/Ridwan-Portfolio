@@ -105,7 +105,7 @@ const Projects = () => {
 
                     <button className="group text-[14px] md:text-[16px] bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
                       View Project
-                      <ChevronRightIcon className="w-4 md:w-5 h-4 md:h-5 group-hover:ml-2 transition-all duration-300" />
+                      <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
                     </button>
                   </Link>
                 )}
@@ -131,7 +131,7 @@ const Projects = () => {
 
                     <button className="group text-[14px] md:text-[16px] bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
                       View Project
-                      <ChevronRightIcon className="md:w-5 h-4 md:h-5 group-hover:ml-2 transition-all duration-300" />
+                      <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
                     </button>
                   </Link>
                 )}
