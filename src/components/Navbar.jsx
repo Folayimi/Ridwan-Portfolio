@@ -97,7 +97,7 @@ const Navbar = () => {
   }, []);
   return (
     <>
-      <div className="w-full hidden md:block">
+      <div className="w-full">
         <div className="hidden md:block w-full flexmm pt-[30px] px-[50px] fixed top-0 left-0 z-[999]">
           <ul className="bg-white/10 border-[1px] text-[12px] flexsm px-[20px] py-[5px] rounded-full shadow-sm backdrop-blur-sm">
             {NavItems.map((item, index) => {
