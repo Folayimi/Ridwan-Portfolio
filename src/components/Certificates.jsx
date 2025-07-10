@@ -38,7 +38,7 @@ const certificates = [
 const Certificates = () => {
   return (
     <section id="certificates" className="py-20 px-[5%] bg-white text-black">
-      <h2 className="text-3xl font-[500] mb-10 text-center">Certifications</h2>
+      <h2 className="text-[25px] font-[500] mb-10 text-center">Certifications</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-[50px]">
         {certificates.map((cert, i) => (
           <div

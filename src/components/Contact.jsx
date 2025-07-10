@@ -20,12 +20,12 @@ const ContactForm = () => {
 
   return (
     <div
-      className="w-full flexmm gap-[30px] mt-[30px] border-l-[1px] border-r-[1px] rounded-[20px] px-[150px]"
+      className="w-full flexmm gap-[30px] mt-0 md:mt-[30px] md:border-l-[1px] md:border-r-[1px] rounded-[20px] md:px-[100px] lg:px-[150px]"
       id="contact"
     >
-      <section className="py-[100px] px-[5%] bg-white text-black">
-        <h2 className="text-[30px] font-bold mb-[40px]">Let's Connect</h2>
-        <p className="text-[#6E6E6E] text-[18px] text-justify max-w-xl mb-10">
+      <section className="py-[70px] md:py-[100px] px-[5%] bg-white text-black">
+        <h2 className="text-[25px] font-bold mb-[40px]">Let's Connect</h2>
+        <p className="text-[#6E6E6E] leading-[2.0] md:leading-[1.6] text-[18px] text-justify max-w-xl mb-10">
           I’m always open to new opportunities, creative collaborations, or
           simply exchanging ideas with like-minded people. Whether you’d like to
           discuss a project, request my portfolio, or just connect, feel free to
