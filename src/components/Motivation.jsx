@@ -10,7 +10,7 @@ const Motivation = () => {
         <div className="w-full flexbs gap-[30px] text-[25px] md:text-[30px] font-[600]">
           <div>
             <div className="flex flex-col md:gap-[10px] md:flex-row items-start justify-start md:flex-wrap">
-              <span> Your Vision, </span> <p> My Creation</p>
+              <span> Your Vision, </span> <p> My Creation.</p>
             </div>
             <span className="block">Let's Bring It To Life</span>
           </div>
@@ -50,7 +50,7 @@ const Motivation = () => {
         <div className="w-full cflexss text-center md:text-left text-[14px] font-[500] text-[#6E6E6E] leading-relaxed gap-[10px]">
           <p>Got a great idea? Let’s create something amazing together!.</p>
           <Link href="mailto:ridwanfolayimi@gmail.com">
-            <button className="flexsm gap-[20px] bg-[#1B1B1B] text-left text-white px-[50px] py-[10px] rounded-[20px] md:rounded-full hover:scale-102 transition-transform duration-300 cursor-pointer">
+            <button className="flexsm gap-[20px] bg-[#1B1B1B] text-left text-white px-[30px] md:px-[50px] py-[10px] rounded-[20px] md:rounded-full hover:scale-102 transition-transform duration-300 cursor-pointer">
               <p>Drop an email at ridwanfolayimi@gmail.com</p>
               <MdEmail className="w-10 h-10 md:w-6 md:h-6 text-white" />
             </button>
