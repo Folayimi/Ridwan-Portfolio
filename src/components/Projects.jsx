@@ -73,13 +73,13 @@ const Projects = () => {
   return (
     <>
       <div
-        className="w-full cflexss gap-[30px] mt-[70px] py-[20px] border-l-[1px] border-r-[1px] rounded-[20px] px-[150px]"
+        className="w-full cflexss justify-start gap-[30px] mt-[150px] md:p-[20px] md:px-[150px] md:border-l-[1px] md:border-r-[1px] rounded-[20px]"
         id="projects"
       >
-        <h1 className="w-full text-[25px] text-center font-[500] mb-[20px]">
+        <h1 className="w-full text-[20px] md:text-[25px] text-center font-[500] mb-[20px]">
           Stuffs I've Been Building
         </h1>
-        <div className="w-full flexsm flex-wrap gap-[20px]">
+        <div className="w-full flex justify-center md:justify-start items-center flex-wrap gap-[20px]">
           {MyProjects.map((project, index) => {
             return (
               <>
@@ -103,9 +103,9 @@ const Projects = () => {
                       {project.description}
                     </p>
 
-                    <button className="group bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
+                    <button className="group text-[14px] md:text-[16px] bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
                       View Project
-                      <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
+                      <ChevronRightIcon className="w-4 md:w-5 h-4 md:h-5 group-hover:ml-2 transition-all duration-300" />
                     </button>
                   </Link>
                 )}
@@ -129,9 +129,9 @@ const Projects = () => {
                       {project.description}
                     </p>
 
-                    <button className="group bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
+                    <button className="group text-[14px] md:text-[16px] bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
                       View Project
-                      <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
+                      <ChevronRightIcon className="md:w-5 h-4 md:h-5 group-hover:ml-2 transition-all duration-300" />
                     </button>
                   </Link>
                 )}
