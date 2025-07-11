@@ -1,10 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { about1, about2 } from "@/atomic-componets/AnimationOrder";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const Projects = () => {
   const [seeMore, setSeeMore] = useState(false);
+  const controls1 = useAnimation();
+  const controls2 = useAnimation();
+  const controls3 = useAnimation();
+  const a1 = useRef(null);
+  const a2 = useRef(null);
+  const a3 = useRef(null);
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    if (scrollY >= a1.current.offsetTop - 500) {
+      controls1.start("visible");
+    }
+    if (scrollY >= a2.current.offsetTop - 500) {
+      controls2.start("visible");
+    }
+    if (scrollY >= a3.current.offsetTop - 500) {
+      controls3.start("visible");
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls1, controls2]);
   const MyProjects = [
     {
       title: "Alps",
@@ -76,10 +103,22 @@ const Projects = () => {
         className="w-full cflexss justify-start gap-[30px] mt-[150px] md:p-[20px] md:px-[100px] lg:px-[150px] md:border-l-[1px] md:border-r-[1px] rounded-[20px]"
         id="projects"
       >
-        <h1 className="w-full text-[20px] md:text-[25px] text-center font-[500] mb-[20px]">
+        <motion.h1
+          variants={about1}
+          initial="hidden"
+          animate={controls1}
+          ref={a1}
+          className="w-full text-[20px] md:text-[25px] text-center font-[500] mb-[20px]"
+        >
           Stuffs I've Been Building
-        </h1>
-        <div className="w-full flex justify-center md:justify-start items-center flex-wrap gap-[20px]">
+        </motion.h1>
+        <motion.div
+          variants={about1}
+          initial="hidden"
+          animate={controls2}
+          ref={a2}
+          className="w-full flex justify-center md:justify-start items-center flex-wrap gap-[20px]"
+        >
           {MyProjects.map((project, index) => {
             return (
               <>
@@ -138,8 +177,14 @@ const Projects = () => {
               </>
             );
           })}
-        </div>
-        <div className="flex items-center justify-start md:justify-center w-full">
+        </motion.div>
+        <motion.div
+          variants={about2}
+          initial="hidden"
+          animate={controls3}
+          ref={a3}
+          className="flex items-center justify-start md:justify-center w-full"
+        >
           <button
             className="group text-center text-[14px] md:text-[16px] flexmm gap-[10px] mt-[10px] md:mt-[20px] cursor-pointer rounded-[10px] bg-[#1B1B1B] text-white px-[20px] py-[10px]"
             onClick={() => setSeeMore(!seeMore)}
@@ -147,7 +192,7 @@ const Projects = () => {
             {seeMore ? "View Less" : "View All"}
             <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
           </button>
-        </div>
+        </motion.div>
       </div>
     </>
   );

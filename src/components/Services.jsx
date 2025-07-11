@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { motion, useAnimation } from "framer-motion";
+import { service1, service2 } from "@/atomic-componets/AnimationOrder";
 
 const Services = () => {
+  const controls1 = useAnimation();
+  const controls2 = useAnimation();
+  const b1 = useRef(null);
+  const b2 = useRef(null);
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    if (scrollY >= b1.current.offsetTop - 500) {
+      controls1.start("visible");
+    }
+    if (scrollY >= b2.current.offsetTop - 500) {
+      controls2.start("visible");
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls1, controls2]);
   const MyServices = [
     {
       title: "Web Development",
@@ -32,11 +54,23 @@ const Services = () => {
 
   return (
     <section className="w-full mt-[30px] md:mt-[50px] py-[20px]">
-      <h1 className="text-[20px] md:text-[25px] text-center font-[500] mb-[30px] md:mb-[20px]">
+      <motion.h1
+        variants={service1}
+        initial="hidden"
+        animate={controls1}
+        ref={b1}
+        className="text-[20px] md:text-[25px] text-center font-[500] mb-[30px] md:mb-[20px]"
+      >
         Things I Love To Do
-      </h1>
+      </motion.h1>
 
-      <div className="w-full flexsm overflow-hidden">
+      <motion.div
+        variants={service2}
+        initial="hidden"
+        animate={controls2}
+        ref={b2}
+        className="w-full flexsm overflow-hidden"
+      >
         <Marquee gradient={false} speed={50}>
           {[...MyServices, ...MyServices].map((service, index) => (
             <div
@@ -60,7 +94,7 @@ const Services = () => {
             </div>
           ))}
         </Marquee>
-      </div>
+      </motion.div>
     </section>
   );
 };
