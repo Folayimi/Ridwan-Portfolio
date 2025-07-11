@@ -1,6 +1,7 @@
-// components/ContactForm.jsx
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { about1, about2 } from "@/atomic-componets/AnimationOrder";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -18,21 +19,61 @@ const ContactForm = () => {
     alert("Message sent! (Form functionality can be added here)");
   };
 
+  const controls1 = useAnimation();
+  const controls2 = useAnimation();
+  const b1 = useRef(null);
+  const b2 = useRef(null);
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    if (scrollY >= b1.current.offsetTop - 500) {
+      controls1.start("visible");
+    }
+    if (scrollY >= b2.current.offsetTop - 500) {
+      controls2.start("visible");
+    }
+  };
+  useEffect(() => {
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div
       className="w-full flexmm gap-[30px] mt-0 md:mt-[30px] md:border-l-[1px] md:border-r-[1px] rounded-[20px] md:px-[100px] lg:px-[150px]"
       id="contact"
     >
       <section className="py-[70px] md:py-[100px] px-[5%] bg-white text-black">
-        <h2 className="text-[25px] font-bold mb-[40px]">Let's Connect</h2>
-        <p className="text-[#6E6E6E] leading-[2.0] md:leading-[1.6] text-[18px] text-justify max-w-xl mb-10">
+        <motion.h2
+          variants={about2}
+          initial="hidden"
+          animate={controls1}
+          ref={b1}
+          className="text-[25px] font-bold mb-[40px]"
+        >
+          Let's Connect
+        </motion.h2>
+        <motion.p
+          variants={about1}
+          initial="hidden"
+          animate={controls2}
+          ref={b2}
+          className="text-[#6E6E6E] leading-[2.0] md:leading-[1.6] text-[18px] text-justify max-w-xl mb-10"
+        >
           I’m always open to new opportunities, creative collaborations, or
           simply exchanging ideas with like-minded people. Whether you’d like to
           discuss a project, request my portfolio, or just connect, feel free to
           reach out.
-        </p>
+        </motion.p>
 
-        <form
+        <motion.form
+          variants={about1}
+          initial="hidden"
+          animate={controls2}
+          ref={b2}
           onSubmit={handleSubmit}
           className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl"
         >
@@ -69,7 +110,7 @@ const ContactForm = () => {
           >
             Send Message
           </button>
-        </form>
+        </motion.form>
       </section>
     </div>
   );

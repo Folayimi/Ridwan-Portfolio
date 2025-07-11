@@ -91,7 +91,7 @@ export const service1 = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.7,
     },
   },
 };
@@ -105,7 +105,7 @@ export const service2 = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.7,
+      duration: 0.5,
     },
   },
 };
@@ -119,7 +119,7 @@ export const about1 = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
 };
@@ -133,35 +133,7 @@ export const about2 = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5,
-    },
-  },
-};
-
-export const Batch3 = {
-  hidden: {
-    opacity: 0,
-    y: 100,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
-export const Batch4 = {
-  hidden: {
-    opacity: 0,
-    y: -100,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
 };
