@@ -137,3 +137,17 @@ export const about2 = {
     },
   },
 };
+
+export const about3 = {
+  hidden: {
+    opacity: 0,
+    y: -100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};

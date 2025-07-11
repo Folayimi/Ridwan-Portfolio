@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
-import { about1, about2 } from "@/atomic-componets/AnimationOrder";
+import { about1, about2, about3 } from "@/atomic-componets/AnimationOrder";
 
 const Motivation = () => {
   const controls1 = useAnimation();
@@ -52,7 +52,13 @@ const Motivation = () => {
             </div>
             <span className="block">Let's Bring It To Life</span>
           </motion.div>
-          <div className="flexmm mt-[10px]">
+          <motion.div
+            variants={about3}
+            initial="hidden"
+            animate={controls3}
+            ref={a3}
+            className="flexmm mt-[10px]"
+          >
             <div className="relative w-[65px] h-[65px]">
               {/* Animated background behind */}
               <div className="absolute inset-0 rounded-full bg-[#57AF46] shadow-lg animate-[softPulse_3s_ease-in-out_infinite] z-0" />
@@ -66,7 +72,7 @@ const Motivation = () => {
                 className="absolute top-0 left-0 z-10 rounded-full object-cover w-[65px] h-[65px] hover:scale-108 transition-transform duration-500"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
         <motion.p
           variants={about1}
@@ -84,8 +90,8 @@ const Motivation = () => {
         <motion.div
           variants={about1}
           initial="hidden"
-          animate={controls3}
-          ref={a3}
+          animate={controls2}
+          ref={a2}
           className="lg:w-[700px] w-full cflexss text-[20px] md:text-[25px] font-[600]"
         >
           <p>

@@ -1,5 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { about3 } from "@/atomic-componets/AnimationOrder";
 import Link from "next/link";
 import {
   HomeIcon,
@@ -92,13 +94,32 @@ const Navbar = () => {
     console.log(route);
   };
 
+  const controls1 = useAnimation();
+  const a1 = useRef(null);
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    if (scrollY >= a1.current.offsetTop - 500) {
+      controls1.start("visible");
+    }
+  };
   useEffect(() => {
-    // getPageRoute();
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
     <>
       <div className="w-full">
-        <div className="w-full flex justify-between md:justify-center items-center pt-[20px] md:pt-[30px] px-[20px] md:px-[50px] fixed top-0 left-0 z-[999]">
+        <motion.div
+          variants={about3}
+          initial="hidden"
+          animate={controls1}
+          ref={a1}
+          className="w-full flex justify-between md:justify-center items-center pt-[20px] md:pt-[30px] px-[20px] md:px-[50px] fixed top-0 left-0 z-[999]"
+        >
           <ul className="bg-white/10 border-[1px] text-[12px] flexsm md:px-[20px] md:py-[5px] rounded-full shadow-sm backdrop-blur-sm">
             {NavItems.map((item, index) => {
               return (
@@ -188,7 +209,7 @@ const Navbar = () => {
               Let's Connect
             </button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </>
   );
