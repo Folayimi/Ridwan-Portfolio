@@ -119,7 +119,7 @@ export const about1 = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
@@ -133,7 +133,7 @@ export const about2 = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.5,
     },
   },
 };

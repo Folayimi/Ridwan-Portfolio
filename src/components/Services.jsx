@@ -19,12 +19,13 @@ const Services = () => {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
     };
-  }, [controls1, controls2]);
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const MyServices = [
     {
       title: "Web Development",

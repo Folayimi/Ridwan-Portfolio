@@ -8,31 +8,12 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 const Projects = () => {
   const [seeMore, setSeeMore] = useState(false);
   const controls1 = useAnimation();
-  const controls2 = useAnimation();
   const controls3 = useAnimation();
   const a1 = useRef(null);
   const a2 = useRef(null);
   const a3 = useRef(null);
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    if (scrollY >= a1.current.offsetTop - 500) {
-      controls1.start("visible");
-    }
-    if (scrollY >= a2.current.offsetTop - 500) {
-      controls2.start("visible");
-    }
-    if (scrollY >= a3.current.offsetTop - 500) {
-      controls3.start("visible");
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [controls1, controls2]);
-  const MyProjects = [
+  const baseProjects = [
     {
       title: "Alps",
       description:
@@ -97,6 +78,38 @@ const Projects = () => {
       link: "",
     },
   ];
+  const projectAnimations = baseProjects.map(() => useAnimation());
+  const projectRefs = baseProjects.map(() => useRef(null));
+
+  const MyProjects = baseProjects.map((project, i) => ({
+    ...project,
+    control: projectAnimations[i],
+    ref: projectRefs[i],
+  }));
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    if (scrollY >= a1.current.offsetTop - 500) {
+      controls1.start("visible");
+    }
+    if (scrollY >= a3.current.offsetTop - 500) {
+      controls3.start("visible");
+    }
+    for (let i = 0; i < MyProjects.length; i++) {
+      const ref = MyProjects[i].ref;
+      if (ref?.current && scrollY >= ref.current.offsetTop - 500) {
+        MyProjects[i].control.start("visible");
+      }
+    }
+  };
+  useEffect(() => {
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       <div
@@ -112,72 +125,78 @@ const Projects = () => {
         >
           Stuffs I've Been Building
         </motion.h1>
-        <motion.div
-          variants={about1}
-          initial="hidden"
-          animate={controls2}
-          ref={a2}
-          className="w-full flex justify-center md:justify-start items-center flex-wrap gap-[20px]"
-        >
+        <div className="w-full flex justify-center md:justify-start items-center flex-wrap gap-[20px]">
           {MyProjects.map((project, index) => {
             return (
               <>
                 {!seeMore && index < 4 && (
-                  <Link
-                    href={`${project.link}`}
-                    key={index}
-                    className="p-[25px] rounded-[20px] cflexss gap-[20px] w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
-                  >
-                    <div className="p-[10px] w-full flexmm rounded-[20px] bg-[#C7C7C7]">
-                      <Image
-                        src={`${project.image}`}
-                        alt={project.title}
-                        width={500}
-                        height={500}
-                        className="w-full h-[170px] rounded-[10px] object-cover"
-                      />
-                    </div>
-                    <h1 className="font-[500] text-[25px]">{project.title}</h1>
-                    <p className="text-[16px] text-[#6E6E6E] line-clamp-2">
-                      {project.description}
-                    </p>
+                  <Link href={`${project.link}`} key={index}>
+                    <motion.div
+                      variants={about1}
+                      initial="hidden"
+                      animate={project.control}
+                      ref={project.ref}
+                      className="p-[25px] rounded-[20px] cflexss gap-[20px] w-full md:w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
+                    >
+                      <div className="p-[10px] w-full flexmm rounded-[20px] bg-[#C7C7C7]">
+                        <Image
+                          src={`${project.image}`}
+                          alt={project.title}
+                          width={500}
+                          height={500}
+                          className="w-full h-[170px] rounded-[10px] object-cover"
+                        />
+                      </div>
+                      <h1 className="font-[500] text-[25px]">
+                        {project.title}
+                      </h1>
+                      <p className="text-[16px] text-[#6E6E6E] line-clamp-2">
+                        {project.description}
+                      </p>
 
-                    <button className="group text-[14px] md:text-[16px] bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
-                      View Project
-                      <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
-                    </button>
+                      <button className="group text-[14px] md:text-[16px] bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
+                        View Project
+                        <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
+                      </button>
+                    </motion.div>
                   </Link>
                 )}
                 {seeMore && (
-                  <Link
-                    href={`${project.link}`}
-                    key={index}
-                    className="p-[25px] rounded-[20px] cflexss gap-[20px] w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
-                  >
-                    <div className="p-[10px] w-full flexmm rounded-[20px] bg-[#C7C7C7]">
-                      <Image
-                        src={`${project.image}`}
-                        alt={project.title}
-                        width={500}
-                        height={500}
-                        className="w-full h-[170px] rounded-[10px] object-cover"
-                      />
-                    </div>
-                    <h1 className="font-[500] text-[25px]">{project.title}</h1>
-                    <p className="text-[16px] text-[#6E6E6E] line-clamp-2">
-                      {project.description}
-                    </p>
+                  <Link href={`${project.link}`} key={index}>
+                    <motion.div
+                      variants={about1}
+                      initial="hidden"
+                      animate={project.control}
+                      ref={project.ref}
+                      className="p-[25px] rounded-[20px] cflexss gap-[20px] w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
+                    >
+                      <div className="p-[10px] w-full flexmm rounded-[20px] bg-[#C7C7C7]">
+                        <Image
+                          src={`${project.image}`}
+                          alt={project.title}
+                          width={500}
+                          height={500}
+                          className="w-full h-[170px] rounded-[10px] object-cover"
+                        />
+                      </div>
+                      <h1 className="font-[500] text-[25px]">
+                        {project.title}
+                      </h1>
+                      <p className="text-[16px] text-[#6E6E6E] line-clamp-2">
+                        {project.description}
+                      </p>
 
-                    <button className="group text-[14px] md:text-[16px] bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
-                      View Project
-                      <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
-                    </button>
+                      <button className="group text-[14px] md:text-[16px] bg-[#F2F2F2] flexmm gap-[10px] text-black px-[25px] py-[15px] rounded-[10px] hover:bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
+                        View Project
+                        <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
+                      </button>
+                    </motion.div>
                   </Link>
                 )}
               </>
             );
           })}
-        </motion.div>
+        </div>
         <motion.div
           variants={about2}
           initial="hidden"
