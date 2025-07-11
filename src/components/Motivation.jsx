@@ -37,7 +37,7 @@ const Motivation = () => {
           faster, smoother, and more engaging. I’m here to help you bring that
           transformation to life. Let’s level it up.
         </p>
-        <div className="lg:w-[700px] cflexss text-[20px] md:text-[25px] font-[600]">
+        <div className="lg:w-[700px] w-full cflexss text-[20px] md:text-[25px] font-[600]">
           <p>
             Looking For Someting{" "}
             <span className="italic font-[500]">Unique?</span>
