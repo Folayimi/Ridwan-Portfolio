@@ -207,7 +207,7 @@ const Navbar = () => {
             </Link>
           </ul>
           <Link href="#contact" className="md:hidden">
-            <button className="px-[15px] flexmm hover:px-[20px] text-[12px] font-[500] py-[12px] bg-[#1B1B1B] text-white rounded-[15px] cursor-pointer transition-all duration-300">
+            <button className="px-[15px] flexmm hover:px-[20px] text-[12px] font-[500] py-[15px] bg-[#1B1B1B] text-white rounded-full cursor-pointer transition-all duration-300">
               Let's Connect
             </button>
           </Link>
