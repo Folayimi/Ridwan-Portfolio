@@ -46,7 +46,7 @@ const ContactForm = () => {
       className="w-full flexmm gap-[30px] mt-0 md:mt-[30px] md:border-l-[1px] md:border-r-[1px] rounded-[20px] md:px-[100px] lg:px-[150px]"
       id="contact"
     >
-      <section className="py-[70px] md:py-[100px] px-[5%] bg-white text-black">
+      <section className="py-[70px] md:py-[100px] px-[5%] text-black">
         <motion.h2
           variants={about2}
           initial="hidden"

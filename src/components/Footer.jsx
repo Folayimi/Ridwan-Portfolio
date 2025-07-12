@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 py-[40px] md:pt-[40px] md:pb-[100px] px-[5%] mt-[50px] bg-white text-[#6E6E6E]">
+    <footer className="border-t border-gray-200 py-[40px] md:pt-[40px] md:pb-[100px] px-[5%] bg-[#f5f5f5] text-[#6E6E6E]">
       <div className="flex flex-col items-center justify-center gap-4 text-center">
         <p className="text-sm font-[500]">
           Copyright &copy; {new Date().getFullYear()} Ridwan Ogunlade.{" "}

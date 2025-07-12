@@ -69,7 +69,7 @@ const Certificates = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <section id="certificates" className="py-20 px-[5%] bg-white text-black">
+    <section id="certificates" className="py-20 px-[5%] text-black">
       <motion.h2
         variants={about1}
         initial="hidden"

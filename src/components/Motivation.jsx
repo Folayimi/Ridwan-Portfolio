@@ -79,7 +79,7 @@ const Motivation = () => {
           initial="hidden"
           animate={controls2}
           ref={a2}
-          className="lg:w-[700px] text-[16px] text-[#6E6E6E] font-[500] leading-[2.0] md:leading-relaxed capitalize text-justify"
+          className="lg:w-[700px] text-[16px] text-[#6E6E6E] leading-[2.0] md:leading-relaxed capitalize text-justify"
         >
           Let’s be real, your brand deserves better than a slow, outdated
           interface. With the right frontend approach, a clean, modern redesign
