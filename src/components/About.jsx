@@ -16,16 +16,16 @@ const About = () => {
   const a4 = useRef(null);
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    if (scrollY >= a1.current.offsetTop - 500) {
+    if (scrollY >= a1.current.offsetTop - 600) {
       controls1.start("visible");
     }
-    if (scrollY >= a2.current.offsetTop - 500) {
+    if (scrollY >= a2.current.offsetTop - 600) {
       controls2.start("visible");
     }
-    if (scrollY >= a3.current.offsetTop - 500) {
+    if (scrollY >= a3.current.offsetTop - 600) {
       controls3.start("visible");
     }
-    if (scrollY >= a4.current.offsetTop - 500) {
+    if (scrollY >= a4.current.offsetTop - 600) {
       controls4.start("visible");
     }
   };

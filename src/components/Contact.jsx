@@ -25,10 +25,10 @@ const ContactForm = () => {
   const b2 = useRef(null);
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    if (scrollY >= b1.current.offsetTop - 500) {
+    if (scrollY >= b1.current.offsetTop - 600) {
       controls1.start("visible");
     }
-    if (scrollY >= b2.current.offsetTop - 500) {
+    if (scrollY >= b2.current.offsetTop - 600) {
       controls2.start("visible");
     }
   };

@@ -11,10 +11,10 @@ const Services = () => {
   const b2 = useRef(null);
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    if (scrollY >= b1.current.offsetTop - 500) {
+    if (scrollY >= b1.current.offsetTop - 600) {
       controls1.start("visible");
     }
-    if (scrollY >= b2.current.offsetTop - 500) {
+    if (scrollY >= b2.current.offsetTop - 600) {
       controls2.start("visible");
     }
   };
@@ -76,7 +76,7 @@ const Services = () => {
           {[...MyServices, ...MyServices].map((service, index) => (
             <div
               key={index}
-              className="cflexmm bg-white w-[250px] md:w-[300px] h-auto p-6 mx-[10px] md:mx-[30px] rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default"
+              className="cflexmm bg-white w-[280px] md:w-[320px] h-auto p-6 mx-[10px] md:mx-[30px] rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default"
             >
               <div className="w-[100px] h-[100px] mb-5 relative">
                 <Image

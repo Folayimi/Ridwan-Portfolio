@@ -88,15 +88,15 @@ const Projects = () => {
   }));
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    if (scrollY >= a1.current.offsetTop - 500) {
+    if (scrollY >= a1.current.offsetTop - 600) {
       controls1.start("visible");
     }
-    if (scrollY >= a3.current.offsetTop - 500) {
+    if (scrollY >= a3.current.offsetTop - 600) {
       controls3.start("visible");
     }
     for (let i = 0; i < MyProjects.length; i++) {
       const ref = MyProjects[i].ref;
-      if (ref?.current && scrollY >= ref.current.offsetTop - 500) {
+      if (ref?.current && scrollY >= ref.current.offsetTop - 600) {
         MyProjects[i].control.start("visible");
       }
     }

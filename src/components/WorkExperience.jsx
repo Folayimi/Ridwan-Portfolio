@@ -38,12 +38,12 @@ const WorkExperience = () => {
   const a1 = useRef(null);
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    if (scrollY >= a1.current.offsetTop - 500) {
+    if (scrollY >= a1.current.offsetTop - 600) {
       controls1.start("visible");
     }
     for (let i = 0; i < Experience.length; i++) {
       const ref = Experience[i].ref;
-      if (ref?.current && scrollY >= ref.current.offsetTop - 500) {
+      if (ref?.current && scrollY >= ref.current.offsetTop - 600) {
         Experience[i].control.start("visible");
       }
     }

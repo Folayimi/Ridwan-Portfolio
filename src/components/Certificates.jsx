@@ -50,12 +50,12 @@ const Certificates = () => {
   const a1 = useRef(null);
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    if (scrollY >= a1.current.offsetTop - 500) {
+    if (scrollY >= a1.current.offsetTop - 600) {
       controls1.start("visible");
     }
     for (let i = 0; i < MyCertificates.length; i++) {
       const ref = MyCertificates[i].ref;
-      if (ref?.current && scrollY >= ref.current.offsetTop - 500) {
+      if (ref?.current && scrollY >= ref.current.offsetTop - 600) {
         MyCertificates[i].control.start("visible");
       }
     }

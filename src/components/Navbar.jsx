@@ -95,14 +95,30 @@ const Navbar = () => {
   };
 
   const controls1 = useAnimation();
-  const a1 = useRef(null);  
+  const a1 = useRef(null);
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    if (scrollY >= a1.current.offsetTop - [-150]) {
+      controls1.start("visible");
+    } else {
+      controls1.start("hidden");
+    }
+  };
+  useEffect(() => {
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
     <>
       <div className="w-full">
         <motion.div
           variants={about3}
           initial="hidden"
-          animate="visible"
+          animate={controls1}
           ref={a1}
           className="w-full flex justify-between md:justify-center items-center pt-[20px] md:pt-[30px] px-[20px] md:px-[50px] fixed top-0 left-0 z-[999]"
         >
