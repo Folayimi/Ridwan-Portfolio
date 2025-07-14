@@ -132,7 +132,7 @@ const About = () => {
             awesome together!
           </p>
           <Link
-            href="https://drive.google.com/file/d/1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q/view?usp=sharing"
+            href="/folayimi-resume.pdf"
             // href=""
             target="_blank"
           >

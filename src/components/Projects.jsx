@@ -135,7 +135,7 @@ const Projects = () => {
                       variants={about1}
                       initial="hidden"
                       animate={project.control}
-                      ref={project.ref}
+                      ref={project.ref}                      
                       className="p-[25px] rounded-[20px] cflexss gap-[20px] w-full md:w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
                     >
                       <div className="p-[10px] w-full flexmm rounded-[20px] bg-[#C7C7C7]">

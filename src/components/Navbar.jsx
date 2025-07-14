@@ -78,7 +78,7 @@ const Navbar = () => {
           className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
         />
       ),
-      link: "#resume",
+      link: "/folayimi-resume.pdf",
       label: "Resume",
     },
   ];
