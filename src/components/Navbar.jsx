@@ -24,7 +24,7 @@ const Navbar = () => {
           className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
         />
       ),
-      link: "#home",
+      link: "/#home",
       label: "Home",
     },
     {
@@ -33,7 +33,7 @@ const Navbar = () => {
           className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
         />
       ),
-      link: "#about",
+      link: "/#about",
       label: "About",
     },
     {
@@ -69,7 +69,7 @@ const Navbar = () => {
           className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
         />
       ),
-      link: "#projects",
+      link: "/#projects",
       label: "Projects",
     },
     {

@@ -19,65 +19,66 @@ const Projects = () => {
       description:
         "A platform designed to simplify documentation Organize playlists and streamline feedback reviews, All while empowering your customers effortlessly.",
       image: "/alpsFrontPage.PNG",
-      link: "",
+      link: "/projects/alps",
     },
     {
       title: "Nifinspired",
       description:
         "Our products harness the pure power of nature, utilizing organic ingredients that nurture your skin without harmful chemicals. ",
       image: "/nifinspired.PNG",
-      link: "",
+      link: "/projects/nifinspired",
     },
     {
-      title: "King David Elite",
+      title: "King David Elites",
       description:
         "The King David Elites marketplace is where you find only the most exclusive and highest quality real estate, automobiles, luxury services, and collectibles.",
       image: "/king-david-main.PNG",
-      link: "",
+      link: "/projects/king-david-elites",
     },
     {
       title: "Curious Kids",
       description:
         "A leading educational platform that sparks curiosity, fosters creativity, and inspires young minds to explore the wonders of the world.",
       image: "/curiouzkidz.PNG",
-      link: "",
+      link: "/projects/curious-kids",
     },
     {
       title: "Shinzoku",
       description:
         "In the days of old, the world thrived, life thrived and powerful creatures were born, then it happened, a great invasion the likes of which the world had never seen before, the world was thrown into chaos, and the creatures were forced to flee to a new world.",
       image: "/shinzoku.PNG",
-      link: "",
+      link: "/projects/shinzoku",
     },
     {
       title: "360 Shotitz Photography",
       description:
         "Capturing life’s special moments that last a lifetime with professionalism and innovation since 2013, where every shutter click captures a narrative waiting to be unveiled.",
-      image: "/360-shotitz.PNG",
-      link: "",
+      image: "/360-shotitz.PNG",      
+      link: "/projects/360-shotitz-photography",
     },
     {
       title: "Remap Link",
       description:
         "By meticulously fine-tuning a vehicle's Engine Control Unit (ECU), we have the capability to extract noteworthy enhancements in power, torque, and fuel efficiency.",
-      image: "/remap-link.PNG",
-      link: "",
+      image: "/remap-link.PNG",      
+      link: "/projects/remap-link",
     },
     {
       title: "Portfolio",
       description:
         "Developed responsive, user portfolio showcasing the projects and skills of the user, built with Next.js and Tailwind CSS.",
-      image: "/clarice-portfolio.PNG",
-      link: "",
+      image: "/clarice-portfolio.PNG",      
+      link: "/projects/portfolio",
     },
     {
       title: "African Made Items",
       description:
         "Showcasing and selling of varieties of African made items that are durable and cost effective in areas such as Fashion, Arts, Home Decor, Accessories e.t.c",
-      image: "/portfolio-africa.PNG",
-      link: "",
+      image: "/portfolio-africa.PNG",      
+      link: "/projects/african-made-items",
     },
   ];
+
   const projectAnimations = baseProjects.map(() => useAnimation());
   const projectRefs = baseProjects.map(() => useRef(null));
 
@@ -135,7 +136,7 @@ const Projects = () => {
                       variants={about1}
                       initial="hidden"
                       animate={project.control}
-                      ref={project.ref}                      
+                      ref={project.ref}
                       className="p-[25px] rounded-[20px] cflexss gap-[20px] w-full md:w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
                     >
                       <div className="p-[10px] w-full flexmm rounded-[20px] bg-[#C7C7C7]">
