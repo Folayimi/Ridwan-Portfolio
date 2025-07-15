@@ -161,7 +161,7 @@ const Project = ({ params }) => {
   }, []);
   return (
     <>
-      <div className="bg-[#F5F5F5] w-full py-[70px] md:px-[100px] lg:px-[200px] px-[20px] cflexsm gap-[30px]">
+      <div className="bg-[#F5F5F5] w-full pt-[50px] pb-[70px] md:px-[100px] lg:px-[200px] px-[20px] cflexsm gap-[30px]">
         <div className="cflexss w-full gap-[30px] text-[18px]">
           <h1 className="text-[35px] md:text-[40px] font-[600]">
             {selectedProject?.title}
