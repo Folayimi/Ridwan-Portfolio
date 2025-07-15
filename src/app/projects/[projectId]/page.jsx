@@ -181,12 +181,12 @@ const Project = ({ params }) => {
         </div>
         <div className="w-full bg-gray-200 p-[30px] text-[16px] cflexss gap-[20px] rounded-[15px]">
           <div className="w-full cflexss gap-[10px]">
-            <p className="font-[500]">Description</p>
+            <p className="font-[600]">Description</p>
             <p>{selectedProject?.description}</p>
           </div>
           <hr className="w-full" />
           <div className="w-full cflexss gap-[10px]">
-            <p className="font-[500]">Technologies</p>
+            <p className="font-[600]">Technologies</p>
             <div className="w-full flexsm gap-[20px] flex-wrap">
               {selectedProject &&
                 selectedProject?.technologies.map((stack, i) => {
@@ -206,15 +206,15 @@ const Project = ({ params }) => {
           <hr className="w-full" />
           <div className="w-full flexss flex-wrap gap-[50px] md:gap-[100px] lg:gap-[130px]">
             <div className="cflexss gap-[10px]">
-              <p className="font-[500]">Year</p>
+              <p className="font-[600]">Year</p>
               <p>{selectedProject.year}</p>
             </div>
             <div className="cflexss gap-[10px]">
-              <p className="font-[500]">Type</p>
+              <p className="font-[600]">Type</p>
               <p>{selectedProject.type}</p>
             </div>
             <div className="cflexss gap-[10px]">
-              <p className="font-[500]">Client</p>
+              <p className="font-[600]">Client</p>
               <p>{selectedProject.client}</p>
             </div>
           </div>
@@ -225,7 +225,7 @@ const Project = ({ params }) => {
             href={selectedProject ? selectedProject?.website : ""}
             target="_blank"
           >
-            <div className="flexmm px-[20px] gap-[20px] py-[10px] rounded-[15px] bg-[#1B1B1B] text-white cursor-pointer">
+            <div className="flexmm px-[20px] gap-[20px] py-[10px] rounded-[15px] bg-[#1B1B1B] text-white cursor-pointer hover:scale-105 transform transition-all druation-300">
               <p>View Project</p>
               <ArrowTopRightOnSquareIcon width={20} />
             </div>
