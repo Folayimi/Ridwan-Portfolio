@@ -1,22 +1,46 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
+import emailjs from "emailjs-com";
+import Loader from "@/atomic-componets/Loader/Loader";
+import { notify, notifyError } from "@/atomic-componets/toastify";
 import { about, about1, about2 } from "@/atomic-componets/AnimationOrder";
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // Replace with API or email logic
-    alert("Message sent! (Form functionality can be added here)");
+    setLoading(true);
+    emailjs
+      .send(
+        "service_o2ig5sh", // from EmailJS dashboard
+        "template_r3fnghh", // from EmailJS dashboard
+        formData,
+        "5OYvpeiylaOMTUUDi" // EmailJS public key
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          notify("Message sent!");
+          setLoading(false);
+          setFormData({ name: "", email: "", message: "" }); // reset form
+        },
+        (err) => {
+          console.error("FAILED...", err);
+          setLoading(false);
+          notifyError("Something went wrong. Please try again later.");
+        }
+      );
   };
 
   const controls1 = useAnimation();
@@ -108,7 +132,18 @@ const ContactForm = () => {
             type="submit"
             className="col-span-1 sm:col-span-2 bg-black text-white py-3 rounded-xl hover:scale-103 transition-all duration-300 cursor-pointer"
           >
-            Send Message
+            {loading ? (
+              <>
+                <div className="flexmm gap-[10px]">
+                  <Loader />
+                  <p>Sending...</p>
+                </div>
+              </>
+            ) : (
+              <>
+                <p>Send Message</p>
+              </>
+            )}
           </button>
         </motion.form>
       </section>
