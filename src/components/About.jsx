@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ClipboardDocumentIcon } from "@heroicons/react/24/outline";
 import { motion, useAnimation } from "framer-motion";
-import { about1, about2 } from "@/atomic-componets/AnimationOrder";
+import { about, about1, about2 } from "@/atomic-componets/AnimationOrder";
 
 const About = () => {
   const controls1 = useAnimation();
@@ -85,7 +85,7 @@ const About = () => {
             writing code that just makes sense.
           </motion.p>
           <motion.div
-            variants={about1}
+            variants={about}
             initial="hidden"
             animate={controls3}
             ref={a3}
@@ -108,7 +108,7 @@ const About = () => {
                   className="absolute w-[30px] h-auto top-[10px] md:top-[5px] left-[calc(50% - 30px)] rounded-full"
                 />
               </div>
-              <div className="relative w-[200px] md:w-[250px] h-[300px] md:h-[350px] bg-white shadow-xl md:pt-[50px] pt-[40px] p-[10px] flexmm group-hover:scale-105 hover:mr-[-20px] transform duration-300 z-0 md:z-[50] ml-[-50px] md:ml-[-10px] md:mt-0 rotate-[10deg]">
+              <div className="relative w-[200px] md:w-[250px] h-[300px] md:h-[350px] bg-white shadow-xl md:pt-[50px] pt-[40px] p-[10px] flexmm group-hover:scale-105 hover:mr-[-20px] transform duration-300 z-0 md:z-[50] ml-[-50px] md:ml-[-10px] mt-[-20px] md:mt-0 rotate-[10deg]">
                 <Image
                   src={"/abt1.jpeg"}
                   alt="About Image 1"

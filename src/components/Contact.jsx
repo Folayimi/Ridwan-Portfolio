@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { about1, about2 } from "@/atomic-componets/AnimationOrder";
+import { about, about1, about2 } from "@/atomic-componets/AnimationOrder";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -57,7 +57,7 @@ const ContactForm = () => {
           Let's Connect
         </motion.h2>
         <motion.p
-          variants={about1}
+          variants={about}
           initial="hidden"
           animate={controls2}
           ref={b2}

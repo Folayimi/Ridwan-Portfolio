@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   hero1,
@@ -95,9 +96,15 @@ const HeroSection = () => {
                 className="hidden md:block lg:hidden"
               >
                 <div className="flexsm gap-[25px] text-[16px] font-[500]">
-                  <button className="bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
-                    Hire Me!
-                  </button>
+                  <Link
+                    href="https://wa.me/2348074442379?text=Hi%20there%2C%20I'm%20interested%20in%20working%20with%20you!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                      Hire Me!
+                    </button>
+                  </Link>
                   <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
                     <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
                     Let’s build something together
@@ -128,16 +135,29 @@ const HeroSection = () => {
               animate="visible"
               className="w-full flex justify-start items-start flex-wrap gap-[20px] lg:gap-[10px] text-[16px] font-[500]"
             >
-              <button className="hidden lg:block bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
-                Hire Me!
-              </button>
+              <Link
+                href="https://wa.me/2348074442379?text=Hi%20there%2C%20I'm%20interested%20in%20working%20with%20you!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="hidden lg:block bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                  Hire Me!
+                </button>
+              </Link>
+
               <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
                 <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
                 Let’s build something together
               </div>
-              <button className="lg:hidden bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
-                Hire Me!
-              </button>
+              <Link
+                href="https://wa.me/2348074442379?text=Hi%20there%2C%20I'm%20interested%20in%20working%20with%20you!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="lg:hidden bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                  Hire Me!
+                </button>
+              </Link>
             </motion.div>
           </div>
         </div>
