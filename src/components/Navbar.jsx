@@ -200,13 +200,13 @@ const Navbar = () => {
                 </>
               );
             })}
-            <Link href="#contact" className="hidden md:block">
+            <Link href="/#contact" className="hidden md:block">
               <button className="px-[15px] flexmm hover:px-[20px] text-[14px] py-[12px] bg-[#1B1B1B] text-white rounded-[15px] cursor-pointer transition-all duration-300">
                 Let's Connect
               </button>
             </Link>
           </ul>
-          <Link href="#contact" className="md:hidden">
+          <Link href="/#contact" className="md:hidden">
             <button className="px-[15px] flexmm hover:px-[20px] text-[12px] font-[500] py-[15px] bg-[#1B1B1B] text-white rounded-full cursor-pointer transition-all duration-300">
               Let's Connect
             </button>

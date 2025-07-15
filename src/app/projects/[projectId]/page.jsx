@@ -29,7 +29,7 @@ const Project = ({ params }) => {
       year: "2024",
       type: "HelpCenter",
       client: "Alps Ltd.",
-      website: "",
+      website: "https://tryalps.com",
     },
     {
       title: "Nifinspired",
@@ -41,9 +41,9 @@ const Project = ({ params }) => {
       year: "2024",
       type: "E-Commerce",
       client: "Connectin Skillz",
-      website: "",
+      website: "https://nifinspired.com/",
     },
-    { 
+    {
       title: "King David Elites",
       description:
         "The King David Elites marketplace is where you find only the most exclusive and highest quality real estate, automobiles, luxury services, and collectibles.",
@@ -59,7 +59,7 @@ const Project = ({ params }) => {
       year: "2022",
       type: "Real Estate",
       client: "KDE",
-      website: "",
+      website: "https://king-david-elite.vercel.app/",
     },
     {
       title: "Curious Kids",
@@ -71,7 +71,7 @@ const Project = ({ params }) => {
       year: "2023",
       type: "Education",
       client: "Creos Community",
-      website: "",
+      website: "https://curiouskidzng.com/",
     },
     {
       title: "Shinzoku",
@@ -83,7 +83,7 @@ const Project = ({ params }) => {
       year: "2025",
       type: "Hackathon",
       client: "Organizers",
-      website: "",
+      website: "https://shinzoku.vercel.app/",
     },
     {
       title: "360 Shotitz Photography",
@@ -102,7 +102,7 @@ const Project = ({ params }) => {
       year: "2024",
       type: "Event",
       client: "FreeLance",
-      website: "",
+      website: "https://360-shotitz.vercel.app/",
     },
     {
       title: "Remap Link",
@@ -114,7 +114,7 @@ const Project = ({ params }) => {
       year: "2024",
       type: "Vehicle Details",
       client: "FreeLance",
-      website: "",
+      website: "https://the-remap-link.vercel.app/",
     },
     {
       title: "Portfolio",
@@ -126,7 +126,7 @@ const Project = ({ params }) => {
       year: "2023",
       type: "Portfolio",
       client: "FreeLance",
-      website: "",
+      website: "https://clarice-portfolio.vercel.app/",
     },
     {
       title: "African Made Items",
@@ -135,10 +135,10 @@ const Project = ({ params }) => {
       images: ["/portfolio-africa.PNG"],
       technologies: ["Next.js", "Tailwind CSS"],
       link: "/projects/african-made-items",
-      year: "",
-      type: "",
+      year: "2023",
+      type: "E-Commerce",
       client: "",
-      website: "",
+      website: "https://next-portfolio-africa-devfolas-projects.vercel.app/",
     },
   ];
 
@@ -153,7 +153,7 @@ const Project = ({ params }) => {
         if (i > 0) {
           setPreviousLink(MyProjects[i - 1].link);
         }
-        if (i < MyProjects.length-1) {
+        if (i < MyProjects.length - 1) {
           setNextLink(MyProjects[i + 1].link);
         }
       }
@@ -161,8 +161,8 @@ const Project = ({ params }) => {
   }, []);
   return (
     <>
-      <div className="bg-[#F5F5F5] w-full py-[70px] md:px-[200px] px-[20px] cflexsm gap-[30px]">
-        <div className="cflexss w-full gap-[20px] text-[18px]">
+      <div className="bg-[#F5F5F5] w-full py-[70px] md:px-[100px] lg:px-[200px] px-[20px] cflexsm gap-[30px]">
+        <div className="cflexss w-full gap-[30px] text-[18px]">
           <h1 className="text-[35px] md:text-[40px] font-[600]">
             {selectedProject?.title}
           </h1>
@@ -220,7 +220,7 @@ const Project = ({ params }) => {
           </div>
         </div>
 
-        <div className="w-full flexbm mt-[20px]">
+        <div className="w-full flexbm text-[14px] md:text-[16px] flex-wrap gap-[20px] mt-[20px]">
           <Link
             href={selectedProject ? selectedProject?.website : ""}
             target="_blank"
@@ -231,10 +231,10 @@ const Project = ({ params }) => {
             </div>
           </Link>
 
-          <div className="flexsm gap-[30px]">
+          <div className="w-full md:w-fit flex md:justify-start justify-between items-center gap-[30px]">
             {previousLink && (
               <Link href={previousLink}>
-                <button className="group text-[14px] md:text-[16px] flexmm gap-[10px] text-black px-[20px] py-[10px] rounded-[10px] bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
+                <button className="group md:text-[16px] flexmm gap-[10px] text-black px-[20px] py-[10px] rounded-[10px] bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
                   <ChevronLeftIcon className="w-5 h-5 group-hover:mr-2 transition-all duration-300" />
                   Previous
                 </button>
@@ -243,7 +243,7 @@ const Project = ({ params }) => {
 
             {nextLink && (
               <Link href={nextLink}>
-                <button className="group text-[14px] md:text-[16px] flexmm gap-[10px] text-black px-[20px] py-[10px] rounded-[10px] bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
+                <button className="group md:text-[16px] flexmm gap-[10px] text-black px-[20px] py-[10px] rounded-[10px] bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
                   Next
                   <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
                 </button>
