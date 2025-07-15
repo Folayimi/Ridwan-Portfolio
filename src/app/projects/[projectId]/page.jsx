@@ -177,12 +177,12 @@ const Project = ({ params }) => {
               />
             </div>
           )}
-          <p>{selectedProject?.description}</p>
+          <p className="text-justify">{selectedProject?.description}</p>
         </div>
         <div className="w-full bg-gray-200 p-[30px] text-[16px] cflexss gap-[20px] rounded-[15px]">
           <div className="w-full cflexss gap-[10px]">
             <p className="font-[600]">Description</p>
-            <p>{selectedProject?.description}</p>
+            <p className="text-justify">{selectedProject?.description}</p>
           </div>
           <hr className="w-full" />
           <div className="w-full cflexss gap-[10px]">
