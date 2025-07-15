@@ -204,7 +204,7 @@ const Project = ({ params }) => {
             </div>
           </div>
           <hr className="w-full" />
-          <div className="w-full flexss gap-[130px]">
+          <div className="w-full flexss flex-wrap gap-[50px] md:gap-[100px] lg:gap-[130px]">
             <div className="cflexss gap-[10px]">
               <p className="font-[500]">Year</p>
               <p>{selectedProject.year}</p>
