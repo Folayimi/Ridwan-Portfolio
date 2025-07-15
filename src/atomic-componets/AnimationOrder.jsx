@@ -91,7 +91,7 @@ export const service1 = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.7,
+      duration: 0.5,
     },
   },
 };
@@ -105,7 +105,7 @@ export const service2 = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
     },
   },
 };
@@ -127,7 +127,7 @@ export const about = {
 export const about1 = {
   hidden: {
     opacity: 0,
-    y: 100,
+    y: 80,
   },
   visible: {
     opacity: 1,
