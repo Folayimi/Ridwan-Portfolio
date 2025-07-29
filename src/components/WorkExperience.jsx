@@ -11,7 +11,7 @@ const WorkExperience = () => {
     {
       title: "Frontend Developer",
       company: "Connectin Skillz",
-      duration: "Jul 2022 - Present",
+      duration: "Jul 2022 - Feb 2025",
     },
     {
       title: "Frontend Developer",
