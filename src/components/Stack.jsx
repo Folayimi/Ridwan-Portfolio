@@ -31,7 +31,7 @@ const Stack = () => {
   return (
     <div className="w-full bg-transparent py-6 flexmm mb-[-70px]">
       <div className="w-[400px] overflow-hidden opacity-[0.6]">
-        <Marquee gradient={false} speed={50}>
+        <Marquee gradient={false} speed={50} className="h-[50px]">
           {[...icons, ...icons].map((Icon, i) => (
             <div
               key={i}

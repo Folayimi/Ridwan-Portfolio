@@ -72,11 +72,11 @@ const Services = () => {
         ref={b2}
         className="w-full flexsm overflow-hidden"
       >
-        <Marquee gradient={false} speed={50}>
+        <Marquee gradient={false} speed={50} className="h-[400px]">
           {[...MyServices, ...MyServices].map((service, index) => (
             <div
               key={index}
-              className="cflexmm w-[280px] md:w-[320px] h-auto p-6 mx-[10px] md:mx-[30px] rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default"
+              className="cflexmm w-[280px] md:w-[320px] h-full p-6 mx-[10px] md:mx-[30px] rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default"
             >
               <div className="w-[100px] h-[100px] mb-5 relative">
                 <Image
