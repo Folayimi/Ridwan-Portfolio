@@ -81,7 +81,7 @@ const Navbar = () => {
       link: "/Ridwan_Ogunlade_Resume.pdf",
       label: "Resume",
     },
-  ];  
+  ];
 
   const controls1 = useAnimation();
   const a1 = useRef(null);
@@ -111,7 +111,7 @@ const Navbar = () => {
           ref={a1}
           className="w-full flex justify-between md:justify-center items-center pt-[20px] md:pt-[30px] px-[20px] md:px-[50px] fixed top-0 left-0 z-[999]"
         >
-          {/* <ul className="bg-white/10 border-[1px] text-[12px] flexsm md:px-[20px] md:py-[5px] rounded-full shadow-sm backdrop-blur-sm">
+          <ul className="bg-white/10 border-[1px] text-[12px] flexsm md:px-[20px] md:py-[5px] rounded-full shadow-sm backdrop-blur-sm">
             {NavItems.map((item, index) => {
               return (
                 <>
@@ -119,6 +119,7 @@ const Navbar = () => {
                     <li key={index} className="relative flexmm px-[10px]">
                       <Link
                         href={item.link}
+                        key={index}
                         className="group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-100"
                       >
                         {item.icon}
@@ -137,6 +138,7 @@ const Navbar = () => {
                       <div className="hidden md:block h-[20px] bg-[#6E6E6E]/40 w-[1px] mr-[20px]" />
                       <Link
                         href={item.link}
+                        key={index}
                         className={`group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-100`}
                       >
                         {item.icon}
@@ -156,6 +158,7 @@ const Navbar = () => {
                     >
                       <Link
                         href={item.link}
+                        key={index}
                         target="_blank"
                         className={`group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-100`}
                       >
@@ -173,6 +176,7 @@ const Navbar = () => {
                     <li key={index} className="relative px-[10px]">
                       <Link
                         href={item.link}
+                        key={index}
                         className="group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-100"
                       >
                         {item.icon}
@@ -194,7 +198,7 @@ const Navbar = () => {
                 Let's Connect
               </button>
             </Link>
-          </ul> */}
+          </ul>
           <Link href="/#contact" className="md:hidden">
             <button className="px-[15px] flexmm hover:px-[20px] text-[12px] font-[500] py-[15px] bg-[#1B1B1B] text-white rounded-full cursor-pointer transition-all duration-300">
               Let's Connect

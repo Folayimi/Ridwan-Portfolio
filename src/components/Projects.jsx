@@ -126,17 +126,17 @@ const Projects = () => {
         >
           Stuffs I've Been Building
         </motion.h1>
-        {/* <div className="w-full flex justify-center md:justify-start items-center flex-wrap gap-[20px]">
+        <div className="w-full flex justify-center md:justify-start items-center flex-wrap gap-[20px]">
           {MyProjects.map((project, index) => {
             return (
               <>
                 {!seeMore && index < 4 && (
-                  <Link href={`${project.link}`} key={project.link}>
+                  <Link href={`${project.link}`} key={index}>
                     <motion.div
                       variants={about1}
                       initial="hidden"
-                      animate={project.control}
                       key={index}
+                      animate={project.control}
                       ref={project.ref}
                       className="p-[25px] rounded-[20px] cflexss gap-[20px] w-full md:w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
                     >
@@ -198,7 +198,7 @@ const Projects = () => {
               </>
             );
           })}
-        </div> */}
+        </div>
         <motion.div
           variants={about2}
           initial="hidden"
