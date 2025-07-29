@@ -78,21 +78,11 @@ const Navbar = () => {
           className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
         />
       ),
-      link: "/Ridwan_Ogunlade_Resume.pdf",
+      // link: "/Ridwan_Ogunlade_Resume.pdf",
+      link: "/",
       label: "Resume",
     },
-  ];
-
-  const getPageRoute = () => {
-    let route;
-    const currentPath = window.location.href;
-    console.log(currentPath);
-    const parts = currentPath.split("/"); // Split the URL by "/"
-    console.log(parts);
-    route = parts[3];
-    setRoutePath(route);
-    console.log(route);
-  };
+  ];  
 
   const controls1 = useAnimation();
   const a1 = useRef(null);
