@@ -54,8 +54,8 @@ const HeroSection = () => {
           </div>
 
           <motion.div
-            variants={isClient && hero2}
-            initial={isClient && "hidden"}
+            variants={hero2}
+            initial="hidden"
             animate="visible"
             className="w-full flexsm mt-[10px]"
           >
