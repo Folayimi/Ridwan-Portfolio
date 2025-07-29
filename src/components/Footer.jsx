@@ -1,4 +1,4 @@
-// components/Footer.jsx
+"use client"
 import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 

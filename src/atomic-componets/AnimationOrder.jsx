@@ -1,3 +1,5 @@
+"use client"
+
 export const hero1 = {
   hidden: {
     opacity: 0,

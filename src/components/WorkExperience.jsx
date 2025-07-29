@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { about1 } from "@/atomic-componets/AnimationOrder";
