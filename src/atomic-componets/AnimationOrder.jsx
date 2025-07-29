@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 export const hero1 = {
   hidden: {
     opacity: 0,
   },
-  visible: {    
+  visible: {
+    x: 0,
     opacity: 1,
     transition: {
       duration: 0.7,
@@ -15,10 +16,11 @@ export const hero1 = {
 
 export const hero2 = {
   hidden: {
-    opacity: 1,
-  },
-  visible: {    
     opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
     transition: {
       delay: 0.5,
       duration: 0.7,
@@ -31,7 +33,8 @@ export const hero3 = {
   hidden: {
     opacity: 0,
   },
-  visible: {    
+  visible: {
+    x: 0,
     opacity: 1,
     transition: {
       delay: 1,
@@ -45,7 +48,8 @@ export const hero4 = {
   hidden: {
     opacity: 0,
   },
-  visible: {    
+  visible: {
+    x: 0,
     opacity: 1,
     transition: {
       delay: 1.5,
@@ -91,7 +95,8 @@ export const service1 = {
   hidden: {
     opacity: 0,
   },
-  visible: {    
+  visible: {
+    x: 0,
     opacity: 1,
     transition: {
       duration: 0.5,

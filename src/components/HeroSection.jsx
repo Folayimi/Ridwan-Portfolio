@@ -25,7 +25,7 @@ const HeroSection = () => {
         <div className="w-full lg:w-[60%] flex flex-col items-center md:items-start justify-center pb-[20px] gap-[20px]">
           <div className="hidden md:block">
             <motion.div
-              variants={hero1}
+              variants={isClient && hero1}
               initial="hidden"
               animate="visible"
               className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default"
@@ -54,7 +54,7 @@ const HeroSection = () => {
           </div>
 
           <motion.div
-            variants={hero2}
+            variants={isClient && hero2}
             initial="hidden"
             animate="visible"
             className="w-full flexsm mt-[10px]"
