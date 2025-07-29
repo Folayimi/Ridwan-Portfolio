@@ -132,8 +132,8 @@ const About = () => {
             awesome together!
           </p>
           <Link
-            // href="/Ridwan_Ogunlade_Resume.pdf"
-            href="/"
+            href="/Ridwan_Ogunlade_Resume.pdf"
+            // href=""
             target="_blank"
           >
             <motion.button
