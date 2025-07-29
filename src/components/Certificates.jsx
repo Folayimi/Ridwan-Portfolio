@@ -62,19 +62,19 @@ const Certificates = () => {
     }
   };
   useEffect(() => {
-    const onScroll = () => {
-      window.requestAnimationFrame(handleScroll);
-    };
+    // const onScroll = () => {
+    //   window.requestAnimationFrame(handleScroll);
+    // };
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    // window.addEventListener("scroll", onScroll);
+    // return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
     <section id="certificates" className="py-20 px-[5%] text-black">
       <motion.h2
-        variants={about1}
-        initial="hidden"
-        animate={controls1}
+        // variants={about1}
+        // initial="hidden"
+        // animate={controls1}
         ref={a1}
         className="text-[25px] font-[500] mb-10 text-center"
       >
@@ -83,9 +83,9 @@ const Certificates = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-[50px]">
         {MyCertificates.map((cert, i) => (
           <motion.div
-            variants={about1}
-            initial="hidden"
-            animate={cert.control}
+            // variants={about1}
+            // initial="hidden"
+            // animate={cert.control}
             ref={cert.ref}
             key={i}
             className="rounded-xl cflexbs overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white cursor-pointer"

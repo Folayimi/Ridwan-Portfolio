@@ -31,21 +31,21 @@ const Motivation = () => {
     }
   };
   useEffect(() => {
-    const onScroll = () => {
-      window.requestAnimationFrame(handleScroll);
-    };
+    // const onScroll = () => {
+    //   window.requestAnimationFrame(handleScroll);
+    // };
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    // window.addEventListener("scroll", onScroll);
+    // return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
     <>
       <div className="cflexsm gap-[30px] w-full mt-[50px] md:border-r-[1px] md:border-l-[1px] rounded-[20px] md:px-[100px] lg:px-[200px] py-[50px]">
         <div className="w-full lg:w-[700px] flexbs gap-[30px] text-[25px] md:text-[30px] font-[600]">
           <motion.div
-            variants={about2}
-            initial="hidden"
-            animate={controls1}
+            // variants={about2}
+            // initial="hidden"
+            // animate={controls1}
             ref={a1}
           >
             <div className="flex flex-col md:gap-[10px] md:flex-row items-start justify-start md:flex-wrap">
@@ -54,9 +54,9 @@ const Motivation = () => {
             <span className="block">Let's Bring It To Life</span>
           </motion.div>
           <motion.div
-            variants={about3}
-            initial="hidden"
-            animate={controls3}
+            // variants={about3}
+            // initial="hidden"
+            // animate={controls3}
             ref={a3}
             className="flexmm mt-[10px]"
           >
@@ -76,9 +76,9 @@ const Motivation = () => {
           </motion.div>
         </div>
         <motion.p
-          variants={about1}
-          initial="hidden"
-          animate={controls2}
+          // variants={about1}
+          // initial="hidden"
+          // animate={controls2}
           ref={a2}
           className="lg:w-[700px] text-[16px] text-[#6E6E6E] leading-[2.0] md:leading-relaxed capitalize text-justify"
         >
@@ -89,9 +89,9 @@ const Motivation = () => {
           transformation to life. Let’s level it up.
         </motion.p>
         <motion.div
-          variants={about1}
-          initial="hidden"
-          animate={controls2}
+          // variants={about1}
+          // initial="hidden"
+          // animate={controls2}
           ref={a2}
           className="lg:w-[700px] w-full cflexss text-[20px] md:text-[25px] font-[600]"
         >
@@ -105,9 +105,9 @@ const Motivation = () => {
           </p>
         </motion.div>
         <motion.div
-          variants={about2}
-          initial="hidden"
-          animate={controls4}
+          // variants={about2}
+          // initial="hidden"
+          // animate={controls4}
           ref={a4}
           className="w-full lg:w-[700px] cflexss text-center md:text-left text-[14px] font-[500] text-[#6E6E6E] leading-relaxed gap-[10px]"
         >

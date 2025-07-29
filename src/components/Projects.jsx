@@ -104,12 +104,12 @@ const Projects = () => {
     }
   };
   useEffect(() => {
-    const onScroll = () => {
-      window.requestAnimationFrame(handleScroll);
-    };
+    // const onScroll = () => {
+    //   window.requestAnimationFrame(handleScroll);
+    // };
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    // window.addEventListener("scroll", onScroll);
+    // return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -119,9 +119,9 @@ const Projects = () => {
         id="projects"
       >
         <motion.h1
-          variants={about1}
-          initial="hidden"
-          animate={controls1}
+          // variants={about1}
+          // initial="hidden"
+          // animate={controls1}
           ref={a1}
           className="w-full text-[20px] md:text-[25px] text-center font-[500] mb-[20px]"
         >
@@ -134,10 +134,10 @@ const Projects = () => {
                 {!seeMore && index < 4 && (
                   <Link href={`${project.link}`} key={index}>
                     <motion.div
-                      variants={about1}
-                      initial="hidden"
-                      key={index}
-                      animate={project.control}
+                      // variants={about1}
+                      // initial="hidden"
+                      // key={index}
+                      // animate={project.control}
                       ref={project.ref}
                       className="p-[25px] rounded-[20px] cflexss gap-[20px] w-full md:w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
                     >
@@ -167,9 +167,9 @@ const Projects = () => {
                 {seeMore && (
                   <Link href={`${project.link}`} key={project.link}>
                     <motion.div
-                      variants={about1}
-                      initial="hidden"
-                      animate={project.control}
+                      // variants={about1}
+                      // initial="hidden"
+                      // animate={project.control}
                       ref={project.ref}
                       className="p-[25px] rounded-[20px] cflexss gap-[20px] w-[380px] bg-white border-[1px] cursor-pointer flex-shrink"
                     >
@@ -201,9 +201,9 @@ const Projects = () => {
           })}
         </div>
         <motion.div
-          variants={about2}
-          initial="hidden"
-          animate={controls3}
+          // variants={about2}
+          // initial="hidden"
+          // animate={controls3}
           ref={a3}
           className="flex items-center justify-start md:justify-center w-full"
         >

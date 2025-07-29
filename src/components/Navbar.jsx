@@ -106,7 +106,7 @@ const Navbar = () => {
       <div className="w-full">
         <motion.div
           variants={about3}
-          initial="hidden"
+          // initial="hidden"
           animate={controls1}
           ref={a1}
           className="w-full flex justify-between md:justify-center items-center pt-[20px] md:pt-[30px] px-[20px] md:px-[50px] fixed top-0 left-0 z-[999]"

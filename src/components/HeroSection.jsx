@@ -25,9 +25,9 @@ const HeroSection = () => {
         <div className="w-full lg:w-[60%] flex flex-col items-center md:items-start justify-center pb-[20px] gap-[20px]">
           <div className="hidden md:block">
             <motion.div
-              variants={hero1}
-              initial="hidden"
-              animate="visible"
+              // variants={hero1}
+              // initial="hidden"
+              // animate="visible"
               className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default"
             >
               <svg
@@ -54,9 +54,9 @@ const HeroSection = () => {
           </div>
 
           <motion.div
-            variants={hero2}
-            initial="hidden"
-            animate="visible"
+            // variants={hero2}
+            // initial="hidden"
+            // animate="visible"
             className="w-full flexsm mt-[10px]"
           >
             <div className="relative w-[65px] h-[65px]">
@@ -75,9 +75,9 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.h1
-            variants={hero3}
-            initial="hidden"
-            animate="visible"
+            // variants={hero3}
+            // initial="hidden"
+            // animate="visible"
             className="w-full text-[25px] md:text-[30px] lg:text-[35px] font-bold"
           >
             <span className="block">Hey, I'm Ridwan Ogunlade.</span>
@@ -89,18 +89,18 @@ const HeroSection = () => {
           <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-start md:justify-between gap-[20px] text-[18px] text-[#6E6E6E] leading-relaxed">
             <div className="w-full cflexss gap-[20px]">
               <motion.p
-                variants={hero4}
-                initial="hidden"
-                animate="visible"
+                // variants={hero4}
+                // initial="hidden"
+                // animate="visible"
                 className="w-full"
               >
                 Bringing an interdisciplinary edge to development, where
                 creative design meets structured logic and analysis.
               </motion.p>
               <motion.div
-                variants={hero6}
-                initial="hidden"
-                animate="visible"
+                // variants={hero6}
+                // initial="hidden"
+                // animate="visible"
                 className="hidden md:block lg:hidden"
               >
                 <div className="flexsm gap-[25px] text-[16px] font-[500]">
@@ -121,9 +121,9 @@ const HeroSection = () => {
               </motion.div>
             </div>
             <motion.div
-              variants={hero5}
-              initial="hidden"
-              animate="visible"
+              // variants={hero5}
+              // initial="hidden"
+              // animate="visible"
               className="w-[60%] md:w-[25%] lg:w-0 flexmm"
             >
               <Image
@@ -138,9 +138,9 @@ const HeroSection = () => {
 
           <div className="w-full block md:hidden lg:block mt-[20px]">
             <motion.div
-              variants={hero6}
-              initial="hidden"
-              animate="visible"
+              // variants={hero6}
+              // initial="hidden"
+              // animate="visible"
               className="w-full flex justify-start items-start flex-wrap gap-[20px] lg:gap-[10px] text-[16px] font-[500]"
             >
               <Link
@@ -172,9 +172,9 @@ const HeroSection = () => {
 
         <div className="hidden lg:block w-[40%] h-full">
           <motion.div
-            variants={hero5}
-            initial="hidden"
-            animate="visible"
+            // variants={hero5}
+            // initial="hidden"
+            // animate="visible"
             className="h-full flexmm"
           >
             <Image
