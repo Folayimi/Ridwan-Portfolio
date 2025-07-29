@@ -3,14 +3,101 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  hero1,
-  hero2,
-  hero3,
-  hero4,
-  hero5,
-  hero6,
-} from "@/atomic-componets/AnimationOrder";
+// import {
+//   hero1,
+//   hero2,
+//   hero3,
+//   hero4,
+//   hero5,
+//   hero6,
+// } from "@/atomic-componets/AnimationOrder";
+
+const hero1 = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const hero2 = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const hero3 = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1,
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const hero4 = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1.5,
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const hero5 = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 2,
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const hero6 = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 2.5,
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
 const HeroSection = () => {
   const [isClient, setIsClient] = useState(false);
 
@@ -28,7 +115,7 @@ const HeroSection = () => {
             <motion.div
               variants={hero1}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default"
             >
               <svg
@@ -57,7 +144,7 @@ const HeroSection = () => {
           <motion.div
             variants={hero2}
             initial="hidden"
-            whileInView="visible"
+            animate="visible"
             className="w-full flexsm mt-[10px]"
           >
             <div className="relative w-[65px] h-[65px]">
@@ -78,7 +165,7 @@ const HeroSection = () => {
           <motion.h1
             variants={hero3}
             initial="hidden"
-            whileInView="visible"
+            animate="visible"
             className="w-full text-[25px] md:text-[30px] lg:text-[35px] font-bold"
           >
             <span className="block">Hey, I'm Ridwan Ogunlade.</span>
@@ -92,7 +179,7 @@ const HeroSection = () => {
               <motion.p
                 variants={hero4}
                 initial="hidden"
-                whileInView="visible"
+                animate="visible"
                 className="w-full"
               >
                 Bringing an interdisciplinary edge to development, where
@@ -101,7 +188,7 @@ const HeroSection = () => {
               <motion.div
                 variants={hero6}
                 initial="hidden"
-                whileInView="visible"
+                animate="visible"
                 className="hidden md:block lg:hidden"
               >
                 <div className="flexsm gap-[25px] text-[16px] font-[500]">
@@ -124,7 +211,7 @@ const HeroSection = () => {
             <motion.div
               variants={hero5}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               className="w-[60%] md:w-[25%] lg:w-0 flexmm"
             >
               <Image
@@ -141,7 +228,7 @@ const HeroSection = () => {
             <motion.div
               variants={hero6}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               className="w-full flex justify-start items-start flex-wrap gap-[20px] lg:gap-[10px] text-[16px] font-[500]"
             >
               <Link
@@ -175,7 +262,7 @@ const HeroSection = () => {
           <motion.div
             variants={hero5}
             initial="hidden"
-            whileInView="visible"
+            animate="visible"
             className="h-full flexmm"
           >
             <Image
