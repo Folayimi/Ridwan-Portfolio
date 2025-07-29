@@ -131,7 +131,7 @@ const Projects = () => {
             return (
               <>
                 {!seeMore && index < 4 && (
-                  <Link href={`${project.link}`} key={index}>
+                  <Link href={`${project.link}`} key={project.link}>
                     <motion.div
                       variants={about1}
                       initial="hidden"
@@ -163,7 +163,7 @@ const Projects = () => {
                   </Link>
                 )}
                 {seeMore && (
-                  <Link href={`${project.link}`} key={index}>
+                  <Link href={`${project.link}`} key={project.link}>
                     <motion.div
                       variants={about1}
                       initial="hidden"
