@@ -1,5 +1,5 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -12,6 +12,14 @@ import {
   hero6,
 } from "@/atomic-componets/AnimationOrder";
 const HeroSection = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+  
   return (
     <>
       <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] mt-[-80px] md:mt-[-40px] md:p-[20px] lg:p-[50px]">
