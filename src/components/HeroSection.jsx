@@ -30,9 +30,9 @@ const HeroSection = () => {
               >
                 <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
               </svg>
-              <div className="text-[12px] font-semibold text-white tracking-wide uppercase">
+              {/* <div className="text-[12px] font-semibold text-white tracking-wide uppercase">
                 Welcome to my portfolio
-              </div>
+              </div> */}
 
               <svg
                 xmlns="http://www.w3.org/2000/svg"
