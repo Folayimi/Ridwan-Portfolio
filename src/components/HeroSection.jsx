@@ -1,103 +1,16 @@
-"use client";
-import React, { useState, useEffect } from "react";
+"use client"
+import React, {useState, useEffect} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-// import {
-//   hero1,
-//   hero2,
-//   hero3,
-//   hero4,
-//   hero5,
-//   hero6,
-// } from "@/atomic-componets/AnimationOrder";
-
-const hero1 = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
-
-const hero2 = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 0.5,
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
-
-const hero3 = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 1,
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
-
-const hero4 = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 1.5,
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
-
-const hero5 = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      delay: 2,
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
-
-const hero6 = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      delay: 2.5,
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
+import {
+  hero1,
+  hero2,
+  hero3,
+  hero4,
+  hero5,
+  hero6,
+} from "@/atomic-componets/AnimationOrder";
 const HeroSection = () => {
   const [isClient, setIsClient] = useState(false);
 
@@ -106,7 +19,6 @@ const HeroSection = () => {
   }, []);
 
   if (!isClient) return null;
-
   return (
     <>
       <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] mt-[-80px] md:mt-[-40px] md:p-[20px] lg:p-[50px]">

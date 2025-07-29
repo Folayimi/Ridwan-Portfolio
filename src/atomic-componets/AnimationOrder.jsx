@@ -15,10 +15,10 @@ export const hero1 = {
 
 export const hero2 = {
   hidden: {
-    opacity: 0,
+    opacity: 1,
   },
   visible: {    
-    opacity: 1,
+    opacity: 0,
     transition: {
       delay: 0.5,
       duration: 0.7,
