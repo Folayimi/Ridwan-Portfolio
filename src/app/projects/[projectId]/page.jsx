@@ -3,6 +3,7 @@ import React, { use, useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const Project = ({ params }) => {
@@ -10,12 +11,15 @@ const Project = ({ params }) => {
   const [selectedProject, setSelectedProject] = useState("");
   const [previousLink, setPreviousLink] = useState("");
   const [nextLink, setNextLink] = useState("");
+  const router = useRouter();
 
   const MyProjects = [
     {
       title: "Alps",
       description:
         "A platform designed to simplify documentation Organize playlists and streamline feedback reviews, All while empowering your customers effortlessly.",
+      mainDescription:
+        "This platform is built to simplify and centralize your documentation process with ease. Seamlessly organize playlists and keep everything structured for better productivity. Streamline the way you collect, manage, and act on feedback from your users. All while creating an empowering experience that puts your customers first, effortlessly.",
       images: ["/alpsFrontPage.PNG"],
       technologies: [
         "Next.js",
@@ -34,9 +38,11 @@ const Project = ({ params }) => {
     {
       title: "Nifinspired",
       description:
-        "Our products harness the pure power of nature, utilizing organic ingredients that nurture your skin without harmful chemicals. ",
+        "Our products harness the pure power of nature, utilizing organic ingredients that nurture your skin without harmful chemicals.",
+      mainDescription:
+        "Our products are crafted to harness the raw, rejuvenating power of nature itself. We rely solely on organic ingredients that nourish and protect your skin. Every formula is free from harsh chemicals, ensuring a gentle, natural experience. Embrace skincare that’s as pure, safe, and effective as nature intended.",
       images: ["/nifinspired.PNG"],
-      technologies: ["React", "Node.js", "StripeAPI", "Tailwind CSS", "PHP"],
+      technologies: ["React", "StripeAPI", "Tailwind CSS", "PHP"],
       link: "/projects/nifinspired",
       year: "2024",
       type: "E-Commerce",
@@ -47,6 +53,8 @@ const Project = ({ params }) => {
       title: "King David Elites",
       description:
         "The King David Elites marketplace is where you find only the most exclusive and highest quality real estate, automobiles, luxury services, and collectibles.",
+      mainDescription:
+        "The King David Elites Marketplace is your gateway to an elite world of distinction. Discover only the most exclusive and top-tier real estate, automobiles, and luxury services. From rare collectibles to refined lifestyle offerings, every listing reflects exceptional quality. This is where sophistication meets exclusivity—for those who demand nothing but the best.",
       images: ["/king-david-main.PNG"],
       technologies: [
         "Next.js",
@@ -65,6 +73,8 @@ const Project = ({ params }) => {
       title: "Curious Kids",
       description:
         "A leading educational platform that sparks curiosity, fosters creativity, and inspires young minds to explore the wonders of the world.",
+      mainDescription:
+        "A premier educational platform designed to ignite curiosity and nurture young, inquisitive minds. We foster creativity through engaging content and interactive learning experiences. Our mission is to inspire exploration and a lifelong love for discovery in children. Empowering the next generation to understand and shape the world around them.",
       images: ["/curiouzkidz.PNG"],
       technologies: ["Next.js", "Redux", "Tailwind CSS", "Node.js"],
       link: "/projects/curious-kids",
@@ -77,6 +87,8 @@ const Project = ({ params }) => {
       title: "Shinzoku",
       description:
         "In the days of old, the world thrived, life thrived and powerful creatures were born, then it happened, a great invasion the likes of which the world had never seen before, the world was thrown into chaos, and the creatures were forced to flee to a new world.",
+      mainDescription:
+        "In the days of old, the world flourished with harmony—life thrived, civilizations rose, and powerful creatures roamed free, guarding the balance of existence. But then, darkness came. A great invasion descended upon the lands, a force so vast and malevolent that the earth trembled beneath it. Chaos consumed order. The skies turned dark, and kingdoms crumbled. The mighty creatures, once revered, were left with no choice. To survive, they fled—across the stars, through forgotten realms—seeking refuge in a new world, a place untouched by the wrath that shattered their own.",
       images: ["/shinzoku.PNG"],
       technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
       link: "/projects/shinzoku",
@@ -89,6 +101,8 @@ const Project = ({ params }) => {
       title: "360 Shotitz Photography",
       description:
         "Capturing life’s special moments that last a lifetime with professionalism and innovation since 2013, where every shutter click captures a narrative waiting to be unveiled.",
+      mainDescription:
+        "Capturing life’s most cherished moments with precision, passion, and a creative eye. Since 2013, we’ve turned fleeting seconds into timeless stories through each shutter click. Blending professionalism with innovation, we ensure every frame tells a unique tale. Because behind every image lies a narrative waiting to be revealed.",
       images: ["/360-shotitz.PNG"],
       technologies: [
         "Next.js",
@@ -108,6 +122,8 @@ const Project = ({ params }) => {
       title: "Remap Link",
       description:
         "By meticulously fine-tuning a vehicle's Engine Control Unit (ECU), we have the capability to extract noteworthy enhancements in power, torque, and fuel efficiency.",
+      mainDescription:
+        "Through precise calibration of a vehicle’s Engine Control Unit (ECU), we unlock remarkable gains in power, torque, and overall performance. This advanced tuning not only elevates driving dynamics, but also promotes improved fuel efficiency without compromising reliability.",
       images: ["/remap-link.PNG"],
       technologies: ["Next.js", "Tree.js", "Tailwind CSS"],
       link: "/projects/remap-link",
@@ -120,6 +136,8 @@ const Project = ({ params }) => {
       title: "Portfolio",
       description:
         "Developed responsive, user portfolio showcasing the projects and skills of the user, built with Next.js and Tailwind CSS.",
+      mainDescription:
+        "Developed a responsive personal portfolio that dynamically showcases user projects, skills, and professional background. Built using Next.js for server-side rendering and routing efficiency, and Tailwind CSS for sleek, mobile-first design. Optimized for performance, accessibility, and seamless user experience across devices.",
       images: ["/clarice-portfolio.PNG"],
       technologies: ["Next.js", "Tailwind CSS"],
       link: "/projects/portfolio",
@@ -132,6 +150,8 @@ const Project = ({ params }) => {
       title: "African Made Items",
       description:
         "Showcasing and selling of varieties of African made items that are durable and cost effective in areas such as Fashion, Arts, Home Decor, Accessories e.t.c",
+      mainDescription:
+        "A curated platform for showcasing and selling a wide variety of African-made products known for their durability and affordability. From fashion and art to home décor and accessories, each item reflects the rich culture and craftsmanship of Africa. Empowering local creators while offering customers unique, high-quality, and meaningful pieces.",
       images: ["/portfolio-africa.PNG"],
       technologies: ["Next.js", "Tailwind CSS"],
       link: "/projects/african-made-items",
@@ -163,9 +183,19 @@ const Project = ({ params }) => {
     <>
       <div className="bg-[#F5F5F5] w-full pt-[50px] pb-[70px] md:px-[100px] lg:px-[200px] px-[20px] cflexsm gap-[30px]">
         <div className="cflexss w-full gap-[30px] text-[18px]">
-          <h1 className="text-[35px] md:text-[40px] font-[600]">
-            {selectedProject?.title}
-          </h1>
+          <div className="w-full flexsm gap-[20px]">
+            <div
+              className="w-[30px] h-[30px] rounded-full bg-white shadow-md flexmm backdrop-blur-2xl cursor-pointer"
+              onClick={() => {
+                router.back();
+              }}
+            >
+              <ChevronLeftIcon width={20} />
+            </div>
+            <h1 className="text-[35px] md:text-[40px] font-[600]">
+              {selectedProject?.title}
+            </h1>
+          </div>
           {selectedProject && (
             <div className="p-[10px] md:p-[20px] w-full flexmm rounded-[20px] bg-[#C7C7C7]">
               <Image
@@ -182,7 +212,7 @@ const Project = ({ params }) => {
         <div className="w-full bg-gray-200 p-[30px] text-[16px] cflexss gap-[20px] rounded-[15px]">
           <div className="w-full cflexss gap-[10px]">
             <p className="font-[600]">Description</p>
-            <p className="text-justify">{selectedProject?.description}</p>
+            <p className="text-justify">{selectedProject?.mainDescription}</p>
           </div>
           <hr className="w-full" />
           <div className="w-full cflexss gap-[10px]">
