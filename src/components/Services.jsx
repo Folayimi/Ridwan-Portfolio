@@ -20,12 +20,12 @@ const Services = () => {
     }
   };
   useEffect(() => {
-    const onScroll = () => {
-      window.requestAnimationFrame(handleScroll);
-    };
+    // const onScroll = () => {
+    //   window.requestAnimationFrame(handleScroll);
+    // };
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    // window.addEventListener("scroll", onScroll);
+    // return () => window.removeEventListener("scroll", onScroll);
   }, []);
   const MyServices = [
     {
@@ -59,8 +59,8 @@ const Services = () => {
       <motion.h1
         variants={service1}
         initial="hidden"
-        animate={controls1}
-        ref={b1}
+        whileInView="visible"
+        // ref={b1}
         className="text-[20px] md:text-[25px] text-center font-[500] mb-[30px] md:mb-[20px]"
       >
         Things I Love To Do
@@ -69,8 +69,8 @@ const Services = () => {
       <motion.div
         variants={service2}
         initial="hidden"
-        animate={controls2}
-        ref={b2}
+        whileInView="visible"
+        // ref={b2}
         className="w-full flexsm overflow-hidden"
       >
         <Marquee gradient={false} speed={50} className="h-[400px]">

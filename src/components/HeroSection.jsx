@@ -19,7 +19,7 @@ const HeroSection = () => {
   }, []);
 
   if (!isClient) return null;
-  
+
   return (
     <>
       <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] mt-[-80px] md:mt-[-40px] md:p-[20px] lg:p-[50px]">
@@ -28,7 +28,7 @@ const HeroSection = () => {
             <motion.div
               variants={hero1}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
               className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default"
             >
               <svg
@@ -57,7 +57,7 @@ const HeroSection = () => {
           <motion.div
             variants={hero2}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
             className="w-full flexsm mt-[10px]"
           >
             <div className="relative w-[65px] h-[65px]">
@@ -78,7 +78,7 @@ const HeroSection = () => {
           <motion.h1
             variants={hero3}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
             className="w-full text-[25px] md:text-[30px] lg:text-[35px] font-bold"
           >
             <span className="block">Hey, I'm Ridwan Ogunlade.</span>
@@ -92,7 +92,7 @@ const HeroSection = () => {
               <motion.p
                 variants={hero4}
                 initial="hidden"
-                animate="visible"
+                whileInView="visible"
                 className="w-full"
               >
                 Bringing an interdisciplinary edge to development, where
@@ -101,7 +101,7 @@ const HeroSection = () => {
               <motion.div
                 variants={hero6}
                 initial="hidden"
-                animate="visible"
+                whileInView="visible"
                 className="hidden md:block lg:hidden"
               >
                 <div className="flexsm gap-[25px] text-[16px] font-[500]">
@@ -124,7 +124,7 @@ const HeroSection = () => {
             <motion.div
               variants={hero5}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
               className="w-[60%] md:w-[25%] lg:w-0 flexmm"
             >
               <Image
@@ -141,7 +141,7 @@ const HeroSection = () => {
             <motion.div
               variants={hero6}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
               className="w-full flex justify-start items-start flex-wrap gap-[20px] lg:gap-[10px] text-[16px] font-[500]"
             >
               <Link
@@ -175,7 +175,7 @@ const HeroSection = () => {
           <motion.div
             variants={hero5}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
             className="h-full flexmm"
           >
             <Image
