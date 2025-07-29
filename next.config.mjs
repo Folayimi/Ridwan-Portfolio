@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    turbo: false, // disables turbopack
+    turbo: false,
   },
-  webpack(config, { isServer }) {
+  webpack: async (config, { isServer }) => {
     if (!isServer) {
-      config.resolve.alias["framer-motion"] = require.resolve("framer-motion");
+      const { resolve } = await import('path');
+      config.resolve.alias['framer-motion'] = resolve('framer-motion');
     }
     return config;
   },
