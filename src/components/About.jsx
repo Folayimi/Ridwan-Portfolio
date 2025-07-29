@@ -132,7 +132,7 @@ const About = () => {
             awesome together!
           </p>
           <Link
-            href="/folayimi-resume.pdf"
+            href="/Ridwan_Ogunlade_Resume.pdf"
             // href=""
             target="_blank"
           >
