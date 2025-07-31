@@ -21,7 +21,7 @@ const HeroSection = () => {
   if (!isClient) return null;
   return (
     <>
-      <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] mt-[-80px] md:mt-[-40px] md:p-[20px] lg:p-[50px]">
+      <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] mt-[-50px] md:mt-[-40px] md:p-[20px] lg:p-[50px]">
         <div className="w-full lg:w-[60%] flex flex-col items-center md:items-start justify-center pb-[20px] gap-[20px]">
           <div className="hidden md:block">
             <motion.div
