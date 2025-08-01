@@ -181,7 +181,7 @@ const Project = ({ params }) => {
   }, []);
   return (
     <>
-      <div className="bg-[#F5F5F5] w-full pt-[50px] pb-[70px] md:px-[100px] lg:px-[200px] px-[20px] cflexsm gap-[30px]">
+      <div className="bg-[#F5F5F5] w-full pt-[80px] pb-[70px] md:px-[100px] lg:px-[200px] px-[20px] cflexsm gap-[30px]">
         <div className="cflexss w-full gap-[30px] text-[18px]">
           <div className="w-full flexsm gap-[20px]">
             <div
@@ -192,7 +192,7 @@ const Project = ({ params }) => {
             >
               <ChevronLeftIcon width={20} />
             </div>
-            <h1 className="text-[35px] md:text-[40px] font-[600]">
+            <h1 className="text-[32px] md:text-[40px] font-[600]">
               {selectedProject?.title}
             </h1>
           </div>
