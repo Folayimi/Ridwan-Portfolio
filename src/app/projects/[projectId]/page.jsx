@@ -54,7 +54,7 @@ const Project = ({ params }) => {
       description:
         "The King David Elites marketplace is where you find only the most exclusive and highest quality real estate, automobiles, luxury services, and collectibles.",
       mainDescription:
-        "The King David Elites Marketplace is your gateway to an elite world of distinction. Discover only the most exclusive and top-tier real estate, automobiles, and luxury services. From rare collectibles to refined lifestyle offerings, every listing reflects exceptional quality. This is where sophistication meets exclusivity—for those who demand nothing but the best.",
+        "The King David Elites Marketplace is your gateway to an elite world of distinction. Discover only the most exclusive and top-tier real estate, automobiles, and luxury services. From rare collectibles to refined lifestyle offerings, every listing reflects exceptional quality. This is where sophistication meets exclusivity for those who demand nothing but the best.",
       images: ["/king-david-main.PNG"],
       technologies: [
         "Next.js",
