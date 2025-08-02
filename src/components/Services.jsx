@@ -73,7 +73,7 @@ const Services = () => {
         ref={b2}
         className="w-full flexsm overflow-hidden"
       >
-        <Marquee gradient={false} speed={50} className="h-[400px]">
+        <Marquee gradient={false} speed={30} className="h-[400px]">
           {[...MyServices, ...MyServices].map((service, index) => (
             <div
               key={index}
