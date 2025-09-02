@@ -111,8 +111,8 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${inter.variable} ${sora.variable}`}>
-        <ToastContainer />        
+      <body className={`${sora.variable} ${inter.variable}`}>
+        <ToastContainer />
         <Navbar />
         <main> {children} </main>
         <Footer />
