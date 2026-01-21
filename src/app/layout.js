@@ -27,6 +27,13 @@ const sora = Sora({
 //   subsets: ["latin"],
 // });
 
+export const viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata = {
   title: "Ogunlade Ridwan | Portfolio",
   keywords: [
@@ -65,9 +72,7 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-  },
-  themeColor: "#000000",
-  colorScheme: "dark light",
+  },  
   robots: {
     index: true,
     follow: true,
@@ -95,8 +100,6 @@ export const metadata = {
     },
   },
   manifest: "/site.webmanifest",
-  themeColor: "#000000",
-  colorScheme: "dark light",
   metadataBase: new URL("https://ogunlade-ridwan.vercel.app"),
   appleWebApp: {
     capable: true,
