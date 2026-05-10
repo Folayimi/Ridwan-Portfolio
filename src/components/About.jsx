@@ -31,12 +31,12 @@ const About = () => {
     }
   };
   useEffect(() => {
-    // const onScroll = () => {
-    //   window.requestAnimationFrame(handleScroll);
-    // };
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
+    };
 
-    // window.addEventListener("scroll", onScroll);
-    // return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
     <>
@@ -46,9 +46,9 @@ const About = () => {
       >
         <div className="w-full lg:w-[800px] p-[20px] text-justify">
           <motion.h1
-            // variants={about1}
-            // initial="hidden"
-            // animate={controls1}
+            variants={about1}
+            initial="hidden"
+            animate={controls1}
             ref={a1}
             className="text-center text-[20px] md:text-[25px] font-[500] mb-[20px]"
           >
@@ -56,9 +56,9 @@ const About = () => {
           </motion.h1>
           {/* <p className="mt-[-15px]">ridwanfolayimi@gmail.com</p> */}
           <motion.p
-            // variants={about1}
-            // initial="hidden"
-            // animate={controls2}
+            variants={about1}
+            initial="hidden"
+            animate={controls2}
             ref={a2}
             className="text-[16px] md:text-[18px] text-[#6E6E6E] leading-[2.0] md:leading-[1.6]"
           >
@@ -70,9 +70,9 @@ const About = () => {
             Native, and a bit of backend magic using Flask and Python.
           </motion.p>
           <motion.p
-            // variants={about1}
-            // initial="hidden"
-            // animate={controls2}
+            variants={about1}
+            initial="hidden"
+            animate={controls2}
             ref={a2}
             className="text-[16px] md:text-[18px] text-[#6E6E6E] leading-[2.0] md:leading-[1.6] mt-[30px]"
           >
@@ -86,9 +86,9 @@ const About = () => {
             writing code that just makes sense.
           </motion.p>
           <motion.div
-            // variants={about}
-            // initial="hidden"
-            // animate={controls3}
+            variants={about}
+            initial="hidden"
+            animate={controls3}
             ref={a3}
             className="flexmm w-full mt-[50px]"
           >
@@ -138,9 +138,9 @@ const About = () => {
             target="_blank"
           >
             <motion.button
-              // variants={about2}
-              // initial="hidden"
-              // animate={controls4}
+              variants={about2}
+              initial="hidden"
+              animate={controls4}
               ref={a4}
               className="mt-[30px] text-[14px] flexmm gap-[10px] bg-[#1B1B1B] px-[20px] py-[10px] rounded-full hover:scale-105 transform duration-300 cursor-pointer"
             >

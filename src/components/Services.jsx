@@ -20,12 +20,12 @@ const Services = () => {
     }
   };
   useEffect(() => {
-    // const onScroll = () => {
-    //   window.requestAnimationFrame(handleScroll);
-    // };
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
+    };
 
-    // window.addEventListener("scroll", onScroll);
-    // return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
   const MyServices = [
     {
@@ -57,9 +57,9 @@ const Services = () => {
   return (
     <section className="w-full mt-[30px] md:mt-[50px] py-[20px]">
       <motion.h1
-        // variants={service1}
-        // initial="hidden"
-        // animate="visible"
+        variants={service1}
+        initial="hidden"
+        animate={controls1}
         ref={b1}
         className="text-[20px] md:text-[25px] text-center font-[500] mb-[30px] md:mb-[20px]"
       >
@@ -67,9 +67,9 @@ const Services = () => {
       </motion.h1>
 
       <motion.div
-        // variants={service2}
-        // initial="hidden"
-        // animate="visible"
+        variants={service2}
+        initial="hidden"
+        animate="visible"
         ref={b2}
         className="w-full flexsm overflow-hidden"
       >

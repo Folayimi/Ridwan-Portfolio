@@ -57,12 +57,12 @@ const ContactForm = () => {
     }
   };
   useEffect(() => {
-    // const onScroll = () => {
-    //   window.requestAnimationFrame(handleScroll);
-    // };
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
+    };
 
-    // window.addEventListener("scroll", onScroll);
-    // return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -72,18 +72,18 @@ const ContactForm = () => {
     >
       <section className="py-[70px] md:py-[100px] px-[5%] text-black">
         <motion.h2
-          // variants={about2}
-          // initial="hidden"
-          // animate={controls1}
+          variants={about2}
+          initial="hidden"
+          animate={controls1}
           ref={b1}
           className="text-[25px] font-bold mb-[40px]"
         >
           Let's Connect
         </motion.h2>
         <motion.p
-          // variants={about}
-          // initial="hidden"
-          // animate={controls2}
+          variants={about}
+          initial="hidden"
+          animate={controls2}
           ref={b2}
           className="text-[#6E6E6E] leading-[2.0] md:leading-[1.6] text-[18px] text-justify max-w-xl mb-10"
         >
@@ -94,9 +94,9 @@ const ContactForm = () => {
         </motion.p>
 
         <motion.form
-          // variants={about1}
-          // initial="hidden"
-          // animate={controls2}
+          variants={about1}
+          initial="hidden"
+          animate={controls2}
           ref={b2}
           onSubmit={handleSubmit}
           className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl"

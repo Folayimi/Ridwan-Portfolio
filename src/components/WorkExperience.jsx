@@ -51,12 +51,12 @@ const WorkExperience = () => {
   };
 
   useEffect(() => {
-    // const onScroll = () => {
-    //   window.requestAnimationFrame(handleScroll);
-    // };
+    const onScroll = () => {
+      window.requestAnimationFrame(handleScroll);
+    };
 
-    // window.addEventListener("scroll", onScroll);
-    // return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
     <>
@@ -65,9 +65,9 @@ const WorkExperience = () => {
         id="work-experience"
       >
         <motion.h1
-          // variants={about1}
-          // initial="hidden"
-          // animate={controls1}
+          variants={about1}
+          initial="hidden"
+          animate={controls1}
           ref={a1}
           className="w-full text-center md:text-left text-[20px] md:text-[25px] font-[500]"
         >
@@ -78,9 +78,9 @@ const WorkExperience = () => {
           {Experience.map((exp, index) => {
             return (
               <motion.div
-                // variants={about1}
-                // initial="hidden"
-                // animate={exp.control}
+                variants={about1}
+                initial="hidden"
+                animate={exp.control}
                 ref={exp.ref}
                 key={index}
                 className="bg-white text-[16px] flexbm gap-[10px] p-6 rounded-lg shadow-md w-full flex-wrap"
