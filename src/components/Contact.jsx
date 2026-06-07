@@ -23,7 +23,7 @@ const ContactForm = () => {
     setLoading(true);
     emailjs
       .send(
-        "service_o2ig5sh", // from EmailJS dashboard
+        "service_nz7ebvg", // from EmailJS dashboard
         "template_r3fnghh", // from EmailJS dashboard
         formData,
         "5OYvpeiylaOMTUUDi" // EmailJS public key
