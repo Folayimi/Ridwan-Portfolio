@@ -1,0 +1,139 @@
+%PDF-1.4
+%Portfolio CV
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 4447 >>
+stream
+0.12 0.14 0.13 rg
+BT /F2 22 Tf 50 790 Td (OGUNLADE RIDWAN FOLAYIMI) Tj ET
+BT /F2 9.5 Tf 50 762 Td (Mobile App Engineer | Flutter, Dart & React Native) Tj ET
+BT /F1 8 Tf 50 747 Td (Lagos, Nigeria | +234 807 444 2379 | +234 812 408 6854 | ridwanfolayimi@gmail.com) Tj ET
+BT /F1 8 Tf 50 736 Td (Portfolio: ridwan-portfolio-xi.vercel.app | LinkedIn: linkedin.com/in/ridwan-ogunlade-1a9610369 | GitHub:) Tj ET
+BT /F1 8 Tf 50 725 Td (github.com/Folayimi) Tj ET
+0.24 0.48 0.27 rg 50 702 495 1.2 re f
+0.24 0.48 0.27 rg BT /F2 11 Tf 50 691 Td (PROFILE) Tj ET
+0.12 0.14 0.13 rg
+BT /F1 9 Tf 50 679 Td (Mobile App Engineer experienced in cross-platform development with Flutter, Dart, React Native, and) Tj ET
+BT /F1 9 Tf 50 667 Td (Expo. Builds application workflows, integrates backend services, and collaborates with developers to) Tj ET
+BT /F1 9 Tf 50 655 Td (deliver practical mobile products. Also experienced with React and Next.js for frontend web) Tj ET
+BT /F1 9 Tf 50 643 Td (development.) Tj ET
+0.24 0.48 0.27 rg 50 619 495 1.2 re f
+0.24 0.48 0.27 rg BT /F2 11 Tf 50 608 Td (TECHNICAL SKILLS) Tj ET
+0.12 0.14 0.13 rg
+BT /F1 9 Tf 50 596 Td (Mobile: Flutter, Dart, React Native, Expo, Expo Router) Tj ET
+BT /F1 9 Tf 50 584 Td (Web: React.js, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS) Tj ET
+BT /F1 9 Tf 50 572 Td (State: GetX, Redux Toolkit, React Hooks | APIs: REST, Dio, Axios, JSON, multipart requests) Tj ET
+BT /F1 9 Tf 50 560 Td (Mobile workflows: OTP, authentication, token handling, local persistence, messaging, Socket.IO,) Tj ET
+BT /F1 9 Tf 50 548 Td (WebSockets, file and image uploads, payments, WebView) Tj ET
+BT /F1 9 Tf 50 536 Td (Tools: Git, GitHub, Android Studio, Visual Studio Code, EAS Build) Tj ET
+0.24 0.48 0.27 rg 50 512 495 1.2 re f
+0.24 0.48 0.27 rg BT /F2 11 Tf 50 501 Td (PROFESSIONAL EXPERIENCE) Tj ET
+0.12 0.14 0.13 rg
+BT /F2 9.5 Tf 50 489 Td (InsureOnGo | Mobile App Engineer | 2025 - Present) Tj ET
+BT /F1 9 Tf 50 474 Td (- Develop and maintain a Flutter application for a digital insurance platform; integrate REST) Tj ET
+BT /F1 9 Tf 50 462 Td (services with Dio.) Tj ET
+BT /F1 9 Tf 50 450 Td (- Build phone sign-in with email OTP, insurance discovery, listings, quotations, cart, and) Tj ET
+BT /F1 9 Tf 50 438 Td (Paystack payment workflows.) Tj ET
+BT /F1 9 Tf 50 426 Td (- Support claims image uploads, file selection, profiles, notifications, customer support,) Tj ET
+BT /F1 9 Tf 50 414 Td (WebView, local storage, debugging, and Android releases.) Tj ET
+BT /F1 8 Tf 50 402 Td (Flutter, Dart, GetX, Dio, REST APIs, GetStorage, Paystack) Tj ET
+BT /F2 9.5 Tf 50 389 Td (SchoolHouse | Mobile App Engineer / Development Coordinator | Contract | Sep - Oct 2026) Tj ET
+BT /F1 9 Tf 50 374 Td (- Contribute role-based mobile experiences for Super Admins, School Admins, Teachers, and) Tj ET
+BT /F1 9 Tf 50 362 Td (Parents.) Tj ET
+BT /F1 9 Tf 50 350 Td (- Work on school registration and documents, profiles, school information, dashboard statistics,) Tj ET
+BT /F1 9 Tf 50 338 Td (API integration, and conversation retrieval.) Tj ET
+BT /F1 9 Tf 50 326 Td (- Integrate Socket.IO messaging alongside REST message operations; coordinate implementation and) Tj ET
+BT /F1 9 Tf 50 314 Td (feature integration with another developer.) Tj ET
+BT /F1 8 Tf 50 302 Td (React Native, Expo, TypeScript, Expo Router, Axios, REST APIs, Socket.IO) Tj ET
+BT /F2 9.5 Tf 50 289 Td (Alps | Frontend Developer | Contract | Feb 2024 - Jun 2025) Tj ET
+BT /F1 9 Tf 50 274 Td (- Develop frontend features for a web help and documentation platform, including articles,) Tj ET
+BT /F1 9 Tf 50 262 Td (videos, playlists, and guides.) Tj ET
+BT /F1 9 Tf 50 250 Td (- Implement configurable themes, domain verification, feedback and activity interfaces, API) Tj ET
+BT /F1 9 Tf 50 238 Td (integrations, and reusable UI components.) Tj ET
+BT /F1 8 Tf 50 226 Td (React, Next.js, TypeScript, REST APIs) Tj ET
+BT /F2 9.5 Tf 50 213 Td (Connectin Skillz - My Bridge International | Mobile App Engineer | Oct 2022 - Oct 2026) Tj ET
+BT /F1 9 Tf 50 198 Td (- Build features for a healthcare-focused networking and knowledge-sharing app: connections,) Tj ET
+BT /F1 9 Tf 50 186 Td (product listings, messaging, and events.) Tj ET
+BT /F1 9 Tf 50 174 Td (- Develop article and journal upload and submission workflows; integrate APIs and reusable) Tj ET
+BT /F1 9 Tf 50 162 Td (Flutter components.) Tj ET
+BT /F1 8 Tf 50 150 Td (Flutter, Dart, REST APIs) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2702 >>
+stream
+0.12 0.14 0.13 rg
+0.24 0.48 0.27 rg 50 778 495 1.2 re f
+0.24 0.48 0.27 rg BT /F2 11 Tf 50 767 Td (PROFESSIONAL EXPERIENCE - CONTINUED) Tj ET
+0.12 0.14 0.13 rg
+BT /F2 9.5 Tf 50 755 Td (FreexiT Technologies | Frontend Engineer | Jan 2024 - Jan 2026 | Remote) Tj ET
+BT /F1 9 Tf 50 740 Td (- Build responsive interfaces and an internal administration dashboard with Next.js, TypeScript,) Tj ET
+BT /F1 9 Tf 50 728 Td (and Tailwind CSS.) Tj ET
+BT /F1 9 Tf 50 716 Td (- Collaborate with distributed teams on API integration, implementation reviews, and release) Tj ET
+BT /F1 9 Tf 50 704 Td (workflows.) Tj ET
+BT /F2 9.5 Tf 50 692 Td (Creos Community - Curious Kidz | Frontend Engineer | Jul 2023 - Jan 2024 | Remote) Tj ET
+BT /F1 9 Tf 50 677 Td (- Build responsive school management dashboard interfaces and translate designs for multiple) Tj ET
+BT /F1 9 Tf 50 665 Td (screen sizes.) Tj ET
+BT /F1 9 Tf 50 653 Td (- Collaborate with backend engineers on school administration workflows.) Tj ET
+0.24 0.48 0.27 rg 50 629 495 1.2 re f
+0.24 0.48 0.27 rg BT /F2 11 Tf 50 618 Td (SELECTED PROJECTS) Tj ET
+0.12 0.14 0.13 rg
+BT /F2 9.5 Tf 50 606 Td (Haggle | Marketplace side project) Tj ET
+BT /F1 9 Tf 50 591 Td (A side project exploring product and service discovery with negotiation at the center. Concept areas) Tj ET
+BT /F1 9 Tf 50 579 Td (include seller details, saved items, and reusable marketplace listing patterns.) Tj ET
+BT /F2 9.5 Tf 50 567 Td (King David Elites | Marketplace) Tj ET
+BT /F1 9 Tf 50 552 Td (Developed a responsive marketplace for luxury listings with search, dynamic filtering, custom) Tj ET
+BT /F1 9 Tf 50 540 Td (pagination, and payment and inventory API integrations.) Tj ET
+BT /F2 9.5 Tf 50 528 Td (Gommerce | Open-source collaboration) Tj ET
+BT /F1 9 Tf 50 513 Td (Collaborated on a multi-vendor commerce backend, contributing to API schemas and role-based routing.) Tj ET
+BT /F1 8 Tf 50 501 Td (Flask, PostgreSQL, SQLAlchemy) Tj ET
+0.24 0.48 0.27 rg 50 476 495 1.2 re f
+0.24 0.48 0.27 rg BT /F2 11 Tf 50 465 Td (EDUCATION) Tj ET
+0.12 0.14 0.13 rg
+BT /F2 9.5 Tf 50 453 Td (Federal University of Agriculture, Abeokuta \(FUNAAB\) | Oct 2019 - Jul 2025) Tj ET
+BT /F1 9 Tf 50 438 Td (Bachelor of Engineering \(B.Eng.\), Mechatronics Engineering | CGPA: 4.11) Tj ET
+0.24 0.48 0.27 rg 50 414 495 1.2 re f
+0.24 0.48 0.27 rg BT /F2 11 Tf 50 403 Td (CERTIFICATIONS & COMMUNITY) Tj ET
+0.12 0.14 0.13 rg
+BT /F1 9 Tf 50 391 Td (Udacity - Full Stack Developer Nanodegree | May 2022 - Aug 2022) Tj ET
+BT /F1 9 Tf 50 379 Td (Hacklab Hackathon Certificate | 2022) Tj ET
+BT /F1 9 Tf 50 367 Td (Google Developer Student Clubs \(GDSC\) - Volunteer Tutor, supporting foundational frontend learning.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+9 0 obj
+<< /Title (Ogunlade Ridwan Folayimi - Mobile App Engineer CV) /Author (Ogunlade Ridwan Folayimi) >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000023 00000 n 
+0000000072 00000 n 
+0000000135 00000 n 
+0000000271 00000 n 
+0000004770 00000 n 
+0000004906 00000 n 
+0000007660 00000 n 
+0000007757 00000 n 
+0000007859 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R /Info 9 0 R >>
+startxref
+7974
+%%EOF

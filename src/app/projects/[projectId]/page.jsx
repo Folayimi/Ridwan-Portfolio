@@ -8,20 +8,20 @@ const projects = [
     title: "Alps",
     category: "Help and documentation platform",
     summary:
-      "A customer help platform for creating and organizing useful product documentation and feedback experiences.",
-    role: "Frontend Engineer",
+      "A web-based help and documentation platform for publishing and organizing articles, videos, playlists, and guides.",
+    role: "Frontend Developer · Contract",
     client: "Alps",
     period: "Feb 2024 – Jun 2025",
     cover: "/alpsFrontPage.PNG",
     gallery: ["/alps-createArticle.PNG", "/alps-folders.PNG", "/alps-design.PNG", "/alps-domain.PNG", "/alps-reports.PNG"],
     overview:
-      "Alps brings customer-facing documentation and feedback tools together. I contributed to the frontend experience across content creation, knowledge organization, customization, and feedback-related interfaces.",
+      "Alps provides a customer-facing help center and content management experience. I contributed to frontend features across content creation and organization, design customization, domain setup, and feedback.",
     contributions: [
-      "Built responsive frontend interfaces for articles, playlists, guides, and content organization.",
-      "Worked on themes, domain verification, feedback, and activity-related views.",
-      "Integrated API-backed UI and reusable components within the existing Next.js application.",
+      "Built interfaces for articles, videos, playlists, and guides.",
+      "Implemented configurable themes, domain verification, and feedback and activity views.",
+      "Integrated REST APIs and created reusable UI components for content management workflows.",
     ],
-    technologies: ["Next.js", "Tailwind CSS", "Redux", "REST APIs"],
+    technologies: ["React", "Next.js", "TypeScript", "REST APIs"],
     website: "https://tryalps.com",
   },
   {

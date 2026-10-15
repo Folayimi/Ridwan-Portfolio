@@ -9,7 +9,7 @@ const Certificates = () => {
     {
       src: "/udacity-certificate.PNG",
       alt: "Udacity Certificate",
-      title: "Full Stack Developer Nanodegree · Udacity (2022)",
+      title: "Full Stack Developer Nanodegree · Udacity (May–Aug 2022)",
     },
     {
       src: "/hackathon-certificate.PNG",

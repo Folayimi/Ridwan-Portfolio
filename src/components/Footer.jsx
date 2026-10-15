@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="border-t border-gray-200 py-[40px] md:pt-[40px] md:pb-[100px] px-[5%] bg-[#f5f5f5] text-[#6E6E6E]">
       <div className="flex flex-col items-center justify-center gap-4 text-center">
         <p className="text-sm font-[500]">
-          Copyright &copy; {new Date().getFullYear()} Ridwan Ogunlade.{" "}
+          Copyright &copy; {new Date().getFullYear()} Ogunlade Ridwan Folayimi.{" "}
           <span className="">All rights reserved.</span>          
         </p>
 

@@ -7,17 +7,17 @@ const focusAreas = [
   {
     title: "Cross-platform mobile",
     description:
-      "Flutter and Dart, plus React Native and Expo. I build reusable screens and flows that work across the everyday tasks people rely on.",
+      "Flutter, Dart, React Native, Expo, and TypeScript for reusable cross-platform application features.",
   },
   {
     title: "Connected product workflows",
     description:
-      "REST API integration, authentication and OTP flows, payments, uploads, local persistence, and real-time messaging integrations.",
+      "REST APIs, authentication and OTP verification, local persistence, messaging, payments, uploads, and Socket.IO integrations.",
   },
   {
     title: "Team delivery",
     description:
-      "Alongside implementation, I have coordinated tasks, timelines, and feature integration while collaborating with another developer.",
+      "I turn product requirements into application workflows, collaborate with backend and mobile developers, and support debugging and feature integration.",
   },
 ];
 
@@ -42,19 +42,20 @@ export default function About() {
             id="about-title"
             className="mt-3 text-3xl font-semibold leading-tight tracking-tight md:text-4xl"
           >
-            Mobile products, built around real user workflows.
+            Mobile App Engineer focused on useful, dependable products.
           </h2>
           <p className="mt-5 leading-7 text-gray-600">
-            I’m Ogunlade Ridwan Folayimi, a software engineer focused on cross-platform
-            mobile development with Flutter and React Native. I work across the
-            interface and its supporting services, from API-backed data flows
-            and authentication to uploads, payments, and messaging.
+            I’m Ogunlade Ridwan Folayimi, a Mobile App Engineer experienced in
+            cross-platform development with Flutter, Dart, React Native, and
+            Expo. My work spans insurance, education, healthcare-focused
+            networking, and marketplace products.
           </p>
           <p className="mt-4 leading-7 text-gray-600">
-            My B.Eng. in Mechatronics Engineering from the Federal University of
-            Agriculture, Abeokuta (FUNAAB, 2019–2025) shaped the way I approach
-            software: understand the system, make the pieces work together, and
-            keep the result practical for its users.
+            I enjoy turning product requirements into functional mobile
+            experiences, integrating backend services, and collaborating with
+            developers to deliver reliable features. I also work with React and
+            Next.js, bringing a broader frontend perspective to application
+            development.
           </p>
           <div className="mt-7 grid grid-cols-2 gap-3" aria-label="Photos of Ridwan Ogunlade">
             <motion.div whileHover={reduceMotion ? undefined : { y: -5, rotate: -1 }} transition={{ duration: 0.2 }}>
@@ -73,7 +74,7 @@ export default function About() {
             <a className="underline underline-offset-4" href="https://www.linkedin.com/in/ridwan-ogunlade-1a9610369" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
           <Link
-            href="/Ridwan_Ogunlade_Resume.pdf"
+            href="/Ridwan_Ogunlade_Mobile_Engineer_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-7 inline-flex rounded-xl bg-[#1b1b1b] px-5 py-3 font-medium text-white transition hover:bg-[#3f4a3c] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]"
@@ -105,8 +106,9 @@ export default function About() {
           <div className="mt-5 rounded-2xl border border-gray-200 p-5">
             <h4 className="font-semibold">Education &amp; community</h4>
             <p className="mt-2 text-sm leading-6 text-gray-600">
-              B.Eng. Mechatronics Engineering, FUNAAB (2019–2025) · Udacity
-              Full Stack Developer Nanodegree (2022) · GDSC volunteer tutor,
+              B.Eng. Mechatronics Engineering, FUNAAB (Oct 2019–Jul 2025), CGPA 4.11 ·
+              Udacity Full Stack Developer Nanodegree (May–Aug
+              2022) · GDSC volunteer tutor,
               supporting learners with frontend fundamentals.
             </p>
           </div>

@@ -6,19 +6,28 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const projects = [
   {
+    title: "Haggle",
+    category: "Marketplace side project",
+    description:
+      "A side project exploring product and service discovery with negotiation at the center. The concept includes seller details, saved items, and reusable marketplace listing patterns.",
+    image: null,
+    link: null,
+    technologies: [],
+  },
+  {
     title: "Alps",
     category: "Help and documentation platform",
     description:
       "Frontend work on a platform for organizing customer help content, including articles, guides, playlists, themes, and feedback interfaces.",
     image: "/alpsFrontPage.PNG",
     link: "/projects/alps",
-    technologies: ["Next.js", "Tailwind CSS", "Redux", "REST APIs"],
+    technologies: ["React", "Next.js", "TypeScript", "REST APIs"],
   },
   {
     title: "King David Elites",
     category: "Marketplace",
     description:
-      "Built a responsive luxury marketplace with product listings, search, and dynamic filtering. The CV also describes custom pagination and payment and inventory API integrations.",
+      "Built a responsive luxury marketplace with product listings, search, and dynamic filtering, including custom pagination and payment and inventory API integrations.",
     image: "/king-david-main.PNG",
     link: "/projects/king-david-elites",
     technologies: ["Next.js", "Redux", "Tailwind CSS"],
@@ -27,7 +36,7 @@ const projects = [
     title: "Curious Kids",
     category: "Education",
     description:
-      "An educational content platform. This portfolio includes a deployed project link and a screenshot of the interface.",
+      "An education platform with school management dashboard interfaces for educators and administrators.",
     image: "/curiouzkidz.PNG",
     link: "/projects/curious-kids",
     technologies: ["Next.js", "Redux", "Tailwind CSS"],
@@ -80,18 +89,6 @@ const projects = [
 
 const additionalWork = [
   {
-    title: "Haggle · negotiation marketplace concept",
-    description:
-      "Flutter marketplace concept for buyer and seller discovery and negotiation. The product direction explores offers and counteroffers, live voice/video, and trust and safety flows including verification, escrow, role-based access, and audit trails.",
-    technologies: "Flutter · Node.js · PostgreSQL · WebRTC · Redis",
-  },
-  {
-    title: "Argo · buyer and seller marketplace concept",
-    description:
-      "Product design and React Native work on a marketplace concept for buyers to describe what they need and connect with potential sellers.",
-    technologies: "React Native · Product design",
-  },
-  {
     title: "Gommerce · open-source collaboration",
     description:
       "Collaborative backend contribution to a multi-vendor commerce platform, working with Flask, PostgreSQL, and SQLAlchemy on API schemas and role-based routing.",
@@ -100,6 +97,29 @@ const additionalWork = [
 ];
 
 function ProjectCard({ project, reduceMotion }) {
+  const content = (
+    <>
+      {project.image ? (
+        <Image src={project.image} alt={`${project.title} project screenshot`} width={900} height={560} className="h-52 w-full object-cover" />
+      ) : (
+        <div className="flex h-52 items-end bg-[#e9eee7] p-6">
+          <span className="rounded-full bg-white px-3 py-1.5 text-sm font-medium text-[#3f4a3c]">Product concept</span>
+        </div>
+      )}
+      <div className="p-6">
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#3f7d35]">{project.category}</p>
+        <h3 className="mt-2 text-xl font-semibold">{project.title}</h3>
+        <p className="mt-3 min-h-20 text-sm leading-6 text-gray-600">{project.description}</p>
+        {project.technologies.length > 0 && (
+          <ul aria-label={`${project.title} technologies`} className="mt-4 flex flex-wrap gap-2">
+            {project.technologies.map((tech) => <li key={tech} className="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-700">{tech}</li>)}
+          </ul>
+        )}
+        {project.link && <span className="mt-5 inline-block text-sm font-semibold text-gray-900 group-hover:underline">Project details <span aria-hidden="true">→</span></span>}
+      </div>
+    </>
+  );
+
   return (
     <motion.article
       className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-lg"
@@ -109,43 +129,9 @@ function ProjectCard({ project, reduceMotion }) {
       transition={{ duration: reduceMotion ? 0 : 0.4, ease: "easeOut" }}
       whileHover={reduceMotion ? undefined : { y: -5 }}
     >
-      <Link
-        href={project.link}
-        className="group block h-full rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]"
-      >
-        <Image
-          src={project.image}
-          alt={`${project.title} project screenshot`}
-          width={900}
-          height={560}
-          className="h-52 w-full object-cover"
-        />
-        <div className="p-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#3f7d35]">
-            {project.category}
-          </p>
-          <h3 className="mt-2 text-xl font-semibold">{project.title}</h3>
-          <p className="mt-3 min-h-20 text-sm leading-6 text-gray-600">
-            {project.description}
-          </p>
-          <ul
-            aria-label={`${project.title} technologies`}
-            className="mt-4 flex flex-wrap gap-2"
-          >
-            {project.technologies.map((tech) => (
-              <li
-                key={tech}
-                className="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-700"
-              >
-                {tech}
-              </li>
-            ))}
-          </ul>
-          <span className="mt-5 inline-block text-sm font-semibold text-gray-900 group-hover:underline">
-            Project details <span aria-hidden="true">→</span>
-          </span>
-        </div>
-      </Link>
+      {project.link ? (
+        <Link href={project.link} className="group block h-full rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]">{content}</Link>
+      ) : <div>{content}</div>}
     </motion.article>
   );
 }
@@ -169,11 +155,16 @@ export default function Projects() {
         Product work and client projects
       </h2>
       <p className="mt-4 max-w-2xl leading-7 text-gray-600">
-        Selected product work across mobile, marketplaces, education, and content platforms.
+        Selected product work across mobile, marketplaces, education, and
+        content platforms.
       </p>
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.slice(0, showAll ? projects.length : 3).map((project) => (
-          <ProjectCard key={project.title} project={project} reduceMotion={reduceMotion} />
+          <ProjectCard
+            key={project.title}
+            project={project}
+            reduceMotion={reduceMotion}
+          />
         ))}
       </div>
       <button
@@ -186,7 +177,9 @@ export default function Projects() {
       </button>
       {showAll && (
         <div className="mt-14">
-          <h3 className="text-xl font-semibold">Additional product and collaborative work</h3>
+          <h3 className="text-xl font-semibold">
+            Additional product and collaborative work
+          </h3>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {additionalWork.map((project) => (
               <motion.article
@@ -199,8 +192,12 @@ export default function Projects() {
                 whileHover={reduceMotion ? undefined : { y: -3 }}
               >
                 <h4 className="font-semibold">{project.title}</h4>
-                <p className="mt-3 text-sm leading-6 text-gray-600">{project.description}</p>
-                <p className="mt-4 text-xs font-medium text-gray-700">{project.technologies}</p>
+                <p className="mt-3 text-sm leading-6 text-gray-600">
+                  {project.description}
+                </p>
+                <p className="mt-4 text-xs font-medium text-gray-700">
+                  {project.technologies}
+                </p>
               </motion.article>
             ))}
           </div>

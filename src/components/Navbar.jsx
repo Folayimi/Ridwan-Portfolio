@@ -8,7 +8,7 @@ const links = [
   ["About", "/#about"],
   ["Projects", "/#projects"],
   ["Experience", "/#work-experience"],
-  ["CV", "/Ridwan_Ogunlade_Resume.pdf"],
+  ["CV", "/Ridwan_Ogunlade_Mobile_Engineer_CV.pdf"],
 ];
 
 const socialLinks = [
@@ -36,7 +36,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-[#f5f5f5]/95 backdrop-blur">
       <nav aria-label="Main navigation" className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 md:px-8">
         <Link href="/#home" onClick={closeMenu} className="shrink-0 rounded-sm font-semibold tracking-tight text-gray-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]">
-          Ridwan Ogunlade
+          Ridwan Ogunlade Folayimi
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
