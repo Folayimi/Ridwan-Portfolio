@@ -1,213 +1,106 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { about3 } from "@/atomic-componets/AnimationOrder";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  HomeIcon,
-  UserIcon,
-  WrenchScrewdriverIcon,
-  EnvelopeIcon,
-  DocumentTextIcon,
-} from "@heroicons/react/24/outline";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
-import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
+const links = [
+  ["About", "/#about"],
+  ["Projects", "/#projects"],
+  ["Experience", "/#work-experience"],
+  ["CV", "/Ridwan_Ogunlade_Resume.pdf"],
+];
 
-const Navbar = () => {
-  const [routePath, setRoutePath] = useState("#home");
-  const NavItems = [
-    {
-      icon: (
-        <HomeIcon
-          size={25}
-          color="red"
-          className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
-        />
-      ),
-      link: "/#home",
-      label: "Home",
-    },
-    {
-      icon: (
-        <UserIcon
-          className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
-        />
-      ),
-      link: "/#about",
-      label: "About",
-    },
-    {
-      icon: (
-        <FaXTwitter
-          className={`w-5 h-5 text-black hover:text-[#57AF46] transition-colors duration-300`}
-        />
-      ),
-      link: "https://x.com/Fola_Dev",
-      label: "Twitter",
-    },
-    {
-      icon: (
-        <FaGithub
-          className={`w-5 h-5 text-black hover:text-[#57AF46] transition-colors duration-300`}
-        />
-      ),
-      link: "https://github.com/folayimi",
-      label: "Github",
-    },
-    {
-      icon: (
-        <FaLinkedin
-          className={`w-5 h-5 text-black hover:text-[#57AF46] transition-colors duration-300`}
-        />
-      ),
-      link: "https://www.linkedin.com/in/ridwan-ogunlade-1a9610369/",
-      label: "LinkedIn",
-    },
-    {
-      icon: (
-        <WrenchScrewdriverIcon
-          className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
-        />
-      ),
-      link: "/#projects",
-      label: "Projects",
-    },
-    {
-      icon: (
-        <DocumentTextIcon
-          className={`w-6 h-6 text-black hover:text-[#57AF46] transition-colors duration-300`}
-        />
-      ),
-      link: "/Ridwan_Ogunlade_Resume.pdf",
-      label: "Resume",
-    },
-  ];
+const socialLinks = [
+  ["GitHub", "https://github.com/Folayimi"],
+  ["LinkedIn", "https://www.linkedin.com/in/ridwan-ogunlade-1a9610369"],
+];
 
-  const controls1 = useAnimation();
-  const a1 = useRef(null);
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    if (scrollY >= a1.current.offsetTop - [-150]) {
-      controls1.start("visible");
-    } else {
-      controls1.start("hidden");
-    }
-  };
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
+
   useEffect(() => {
-    const onScroll = () => {
-      window.requestAnimationFrame(handleScroll);
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    function closeOnEscape(event) {
+      if (event.key === "Escape") setMenuOpen(false);
+    }
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
-  return (
-    <>
-      <div className="w-full">
-        <motion.div
-          variants={about3}
-          initial="hidden"
-          animate={controls1}
-          ref={a1}
-          className="w-full flex justify-between md:justify-center items-center pt-[20px] md:pt-[30px] px-[20px] md:px-[50px] fixed top-0 left-0 z-[999]"
-        >
-          <ul className="bg-white/10 border-[1px] text-[12px] flexsm md:px-[20px] md:py-[5px] rounded-full shadow-sm backdrop-blur-sm">
-            {NavItems.map((item, index) => {
-              return (
-                <>
-                  {item.link === "#about" ? (
-                    <li key={index} className="relative flexmm px-[10px]">
-                      <Link
-                        href={item.link}
-                        key={index}
-                        className="group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-100"
-                      >
-                        {item.icon}
-                        <div
-                          className="absolute top-[60px] left-0 bg-[#3f4a3c] text-white px-[18px] py-[6px] rounded-[8px]
-               opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
-               transition-all duration-100 pointer-events-none group-hover:pointer-events-auto"
-                        >
-                          {item.label}
-                        </div>
-                      </Link>
-                      <div className="hidden md:block h-[20px] bg-[#6E6E6E]/40 w-[1px] ml-[20px]" />
-                    </li>
-                  ) : item.link === "#projects" ? (
-                    <li key={index} className="relative flexmm px-[10px]">
-                      <div className="hidden md:block h-[20px] bg-[#6E6E6E]/40 w-[1px] mr-[20px]" />
-                      <Link
-                        href={item.link}
-                        key={index}
-                        className={`group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-100`}
-                      >
-                        {item.icon}
-                        <div
-                          className="absolute top-[60px] left-[15px] bg-[#3f4a3c] text-white px-[18px] py-[6px] rounded-[8px]
-               opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
-               transition-all duration-100 pointer-events-none group-hover:pointer-events-auto"
-                        >
-                          {item.label}
-                        </div>
-                      </Link>
-                    </li>
-                  ) : item.link.startsWith("https") ? (
-                    <li
-                      key={index}
-                      className="hidden md:block relative px-[10px]"
-                    >
-                      <Link
-                        href={item.link}
-                        key={index}
-                        target="_blank"
-                        className={`group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-100`}
-                      >
-                        {item.icon}
-                        <div
-                          className="absolute top-[60px] left-0 bg-[#3f4a3c] text-white px-[18px] py-[6px] rounded-[8px]
-               opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
-               transition-all duration-100 pointer-events-none group-hover:pointer-events-auto"
-                        >
-                          {item.label}
-                        </div>
-                      </Link>
-                    </li>
-                  ) : (
-                    <li key={index} className="relative px-[10px]">
-                      <Link
-                        href={item.link}
-                        key={index}
-                        className="group flexmm px-[2px] md:px-[10px] hover:px-[15px] py-[10px] hover:bg-[#6E6E6E]/10 rounded-[12px] transition-all duration-100"
-                      >
-                        {item.icon}
-                        <div
-                          className="absolute top-[60px] left-0 bg-[#3f4a3c] text-white px-[18px] py-[6px] rounded-[8px]
-               opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
-               transition-all duration-100 pointer-events-none group-hover:pointer-events-auto"
-                        >
-                          {item.label}
-                        </div>
-                      </Link>
-                    </li>
-                  )}
-                </>
-              );
-            })}
-            <Link href="/#contact" className="hidden md:block">
-              <button className="px-[15px] flexmm hover:px-[20px] text-[14px] py-[12px] bg-[#1B1B1B] text-white rounded-[15px] cursor-pointer transition-all duration-300">
-                Let's Connect
-              </button>
-            </Link>
-          </ul>
-          <Link href="/#contact" className="md:hidden">
-            <button className="px-[15px] flexmm hover:px-[20px] text-[12px] font-[500] py-[15px] bg-[#1B1B1B] text-white rounded-full cursor-pointer transition-all duration-300">
-              Let's Connect
-            </button>
-          </Link>
-        </motion.div>
-      </div>
-    </>
-  );
-};
 
-export default Navbar;
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-[#f5f5f5]/95 backdrop-blur">
+      <nav aria-label="Main navigation" className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 md:px-8">
+        <Link href="/#home" onClick={closeMenu} className="shrink-0 rounded-sm font-semibold tracking-tight text-gray-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]">
+          Ridwan Ogunlade
+        </Link>
+
+        <div className="hidden items-center gap-1 md:flex">
+          {links.map(([label, href]) => (
+            <Link key={label} href={href} className="rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3f7d35]">
+              {label}
+            </Link>
+          ))}
+          {socialLinks.map(([label, href]) => (
+            <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3f7d35]">
+              {label}<span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          ))}
+          <Link href="/#contact" className="ml-2 rounded-xl bg-[#1b1b1b] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#3f4a3c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3f7d35]">
+            Contact
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-gray-300 bg-white text-gray-900 transition hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3f7d35] md:hidden"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+            {menuOpen ? <path strokeLinecap="round" strokeLinejoin="round" d="m6 6 12 12M18 6 6 18" /> : <path strokeLinecap="round" strokeLinejoin="round" d="M4 7h16M4 12h16M4 17h16" />}
+          </svg>
+        </button>
+
+        <AnimatePresence initial={false}>
+          {menuOpen && (
+            <motion.div
+              id="mobile-navigation"
+              className="absolute left-0 right-0 top-[calc(100%+1px)] border-b border-gray-200 bg-[#f5f5f5] px-4 pb-5 pt-3 shadow-lg md:hidden"
+              initial={reduceMotion ? false : { opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: reduceMotion ? 0 : -8 }}
+              transition={{ duration: reduceMotion ? 0 : 0.18 }}
+            >
+              <ul className="grid gap-1">
+                {links.map(([label, href]) => (
+                  <li key={label}>
+                    <Link href={href} onClick={closeMenu} className="block rounded-xl px-4 py-3 font-medium text-gray-800 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3f7d35]">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-2 grid grid-cols-3 gap-2 border-t border-gray-200 pt-4">
+                {socialLinks.map(([label, href]) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="rounded-xl border border-gray-200 bg-white px-3 py-3 text-center text-sm font-medium text-gray-800 hover:bg-gray-100">
+                    {label}<span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                ))}
+                <Link href="/#contact" onClick={closeMenu} className="rounded-xl bg-[#1b1b1b] px-3 py-3 text-center text-sm font-medium text-white hover:bg-[#3f4a3c]">
+                  Contact
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </header>
+  );
+}

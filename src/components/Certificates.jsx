@@ -9,12 +9,12 @@ const Certificates = () => {
     {
       src: "/udacity-certificate.PNG",
       alt: "Udacity Certificate",
-      title: "ALX-T Full Stack Developer – UDACITY",
+      title: "Full Stack Developer Nanodegree · Udacity (2022)",
     },
     {
       src: "/hackathon-certificate.PNG",
       alt: "Hackathon Certificate",
-      title: "Certificate Of Particiapation – HACKLAB",
+      title: "Hackathon Certificate · Hacklab (2022)",
     },
     {
       src: "/nuesa-certificate.jpeg",

@@ -1,194 +1,40 @@
-"use client"
-import React, {useState, useEffect} from "react";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import {
-  hero1,
-  hero2,
-  hero3,
-  hero4,
-  hero5,
-  hero6,
-} from "@/atomic-componets/AnimationOrder";
-const HeroSection = () => {
-  const [isClient, setIsClient] = useState(false);
+import { motion, useReducedMotion } from "framer-motion";
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+const technologies = ["Flutter", "Dart", "React Native", "Expo", "TypeScript", "REST APIs"];
 
-  if (!isClient) return null;
+export default function HeroSection() {
+  const reduceMotion = useReducedMotion();
   return (
-    <>
-      <div className="w-full flexbm text-black md:border-l-[1px] md:border-r-[1px] rounded-[20px] mt-[-20px] md:mt-[-20px] md:p-[20px] lg:p-[50px]">
-        <div className="w-full lg:w-[60%] flex flex-col items-center md:items-start justify-center pb-[20px] gap-[20px]">
-          <div className="hidden md:block">
-            <motion.div
-              variants={hero1}
-              initial="hidden"
-              animate="visible"
-              className="p-[5px] flexmm gap-[5px] bg-[#57AF46] rounded-[10px] cursor-default"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-4 h-4 text-[#3f4a3c] animate-pulse"
-              >
-                <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
-              </svg>
-              <div className="text-[12px] font-semibold text-white tracking-wide uppercase">
-                Welcome to my portfolio
-              </div>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-4 h-4 text-[#3f4a3c] animate-pulse"
-              >
-                <path d="M12 2.25l2.765 6.577 7.235.602-5.5 4.825 1.618 7.096L12 17.77l-6.118 3.58 1.618-7.096-5.5-4.825 7.235-.602L12 2.25z" />
-              </svg>
-            </motion.div>
-          </div>
-
-          <motion.div
-            variants={hero2}
-            initial="hidden"
-            animate="visible"
-            className="w-full flexsm mt-[10px]"
-          >
-            <div className="relative w-[65px] h-[65px]">
-              {/* Animated background behind */}
-              <div className="absolute inset-0 rounded-full bg-[#57AF46] shadow-lg animate-[softPulse_3s_ease-in-out_infinite] z-0" />
-
-              {/* Static image above */}
-              <Image
-                src="/Avatar.PNG"
-                alt="Profile Picture"
-                width={1000}
-                height={1000}
-                className="absolute top-0 left-0 z-10 rounded-full object-cover w-[65px] h-[65px] hover:scale-108 transition-transform duration-500"
-              />
-            </div>
-          </motion.div>
-
-          <motion.h1
-            variants={hero3}
-            initial="hidden"
-            animate="visible"
-            className="w-full text-[25px] md:text-[30px] lg:text-[35px] font-bold"
-          >
-            <span className="block">Hey, I'm Ridwan Ogunlade.</span>
-            <span className="block">
-              Software Engineer and Creative Technologist
-            </span>
-          </motion.h1>
-
-          <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-start md:justify-between gap-[20px] text-[18px] text-[#6E6E6E] leading-relaxed">
-            <div className="w-full cflexss gap-[20px]">
-              <motion.p
-                variants={hero4}
-                initial="hidden"
-                animate="visible"
-                className="w-full"
-              >
-                Bringing an interdisciplinary edge to development, where
-                creative design meets structured logic and analysis.
-              </motion.p>
-              <motion.div
-                variants={hero6}
-                initial="hidden"
-                animate="visible"
-                className="hidden md:block lg:hidden"
-              >
-                <div className="flexsm gap-[25px] text-[16px] font-[500]">
-                  <Link
-                    href="https://wa.me/2348074442379?text=Hi%20there%2C%20I'm%20interested%20in%20working%20with%20you!"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
-                      Hire Me!
-                    </button>
-                  </Link>
-                  <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
-                    <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
-                    Let’s build something together
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-            <motion.div
-              variants={hero5}
-              initial="hidden"
-              animate="visible"
-              className="w-[60%] md:w-[25%] lg:w-0 flexmm"
-            >
-              <Image
-                src="/buildingW1.svg"
-                alt="Profile Picture"
-                width={1000}
-                height={1000}
-                className="block lg:hidden object-cover w-full hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          </div>
-
-          <div className="w-full block md:hidden lg:block mt-[20px]">
-            <motion.div
-              variants={hero6}
-              initial="hidden"
-              animate="visible"
-              className="w-full flex justify-start items-start flex-wrap gap-[20px] lg:gap-[10px] text-[16px] font-[500]"
-            >
-              <Link
-                href="https://wa.me/2348074442379?text=Hi%20there%2C%20I'm%20interested%20in%20working%20with%20you!"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="hidden lg:block bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
-                  Hire Me!
-                </button>
-              </Link>
-
-              <div className="bg-[#E1F9DC] flexsm gap-[10px] text-black px-[20px] py-[10px] rounded-full cursor-default">
-                <div className="w-[10px] h-[10px] bg-[#3f4a3c] rounded-full" />
-                Let’s build something together
-              </div>
-              <Link
-                href="https://wa.me/2348074442379?text=Hi%20there%2C%20I'm%20interested%20in%20working%20with%20you!"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="lg:hidden bg-[#1B1B1B] text-white px-[20px] py-[8px] rounded-[10px] hover:scale-105 transition-transform duration-300 cursor-pointer">
-                  Hire Me!
-                </button>
-              </Link>
-            </motion.div>
-          </div>
+    <motion.section
+      id="home"
+      aria-labelledby="hero-title"
+      className="mx-auto grid min-h-[76vh] max-w-6xl items-center gap-12 py-24 md:grid-cols-[1.35fr_0.65fr] md:py-32"
+      initial={reduceMotion ? "visible" : "hidden"}
+      animate="visible"
+      variants={{ hidden: {}, visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.1 } } }}
+    >
+      <motion.div variants={{ hidden: { opacity: 0, y: reduceMotion ? 0 : 16 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: reduceMotion ? 0 : 0.45 }}>
+        <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#3f7d35]">Mobile App Engineer · Flutter &amp; React Native</p>
+        <h1 id="hero-title" className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">I build mobile products and the workflows behind them.</h1>
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600">I develop cross-platform applications with Flutter and React Native, connecting thoughtful mobile interfaces to APIs, authentication, payments, uploads, and real-time features.</p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="#projects" className="rounded-xl bg-[#1b1b1b] px-6 py-3 font-medium text-white transition hover:bg-[#3f4a3c] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]">Explore selected work</Link>
+          <a href="/Ridwan_Ogunlade_Resume.pdf" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-gray-300 bg-white px-6 py-3 font-medium text-gray-900 transition hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]">View CV <span className="sr-only">(opens in a new tab)</span></a>
+          <a href="mailto:ridwanfolayimi@gmail.com" className="rounded-xl px-4 py-3 font-medium text-gray-700 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]">Contact</a>
         </div>
-
-        <div className="hidden lg:block w-[40%] h-full">
-          <motion.div
-            variants={hero5}
-            initial="hidden"
-            animate="visible"
-            className="h-full flexmm"
-          >
-            <Image
-              src="/buildingW1.svg"
-              alt="Profile Picture"
-              width={1000}
-              height={1000}
-              className="object-cover w-[80%] hover:scale-105 transition-transform duration-500"
-            />
-          </motion.div>
-        </div>
-      </div>
-    </>
+        <ul aria-label="Core technologies" className="mt-8 flex flex-wrap gap-2">{technologies.map((tech) => <li key={tech} className="rounded-full bg-white px-3 py-1.5 text-sm text-gray-700 ring-1 ring-gray-200">{tech}</li>)}</ul>
+      </motion.div>
+      <motion.div
+        className="mx-auto w-56 md:w-full md:max-w-sm"
+        initial={reduceMotion ? false : { opacity: 0, scale: 0.97 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: reduceMotion ? 0 : 0.55, delay: reduceMotion ? 0 : 0.2 }}
+      >
+        <Image src="/Avatar.PNG" alt="Portrait of Ridwan Ogunlade" width={600} height={600} priority className="aspect-square w-full rounded-[2rem] object-cover shadow-xl" />
+      </motion.div>
+    </motion.section>
   );
-};
-
-export default HeroSection;
+}

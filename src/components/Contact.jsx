@@ -18,29 +18,24 @@ const ContactForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return;
     setLoading(true);
-    emailjs
-      .send(
+    try {
+      await emailjs.send(
         "service_nz7ebvg", // from EmailJS dashboard
         "template_r3fnghh", // from EmailJS dashboard
         formData,
         "5OYvpeiylaOMTUUDi" // EmailJS public key
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          notify("Message sent!");
-          setLoading(false);
-          setFormData({ name: "", email: "", message: "" }); // reset form
-        },
-        (err) => {
-          console.error("FAILED...", err);
-          setLoading(false);
-          notifyError("Something went wrong. Please try again later.");
-        }
       );
+      notify("Message sent!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch {
+      notifyError("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const controls1 = useAnimation();
@@ -101,35 +96,45 @@ const ContactForm = () => {
           onSubmit={handleSubmit}
           className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl"
         >
-          <input
+          <label className="col-span-1 sm:col-span-1">
+            <span className="sr-only">Full name</span>
+            <input
             type="text"
             name="name"
+            autoComplete="name"
             placeholder="Full Name"
             value={formData.name}
             onChange={handleChange}
             required
-            className="col-span-1 sm:col-span-1 p-4 rounded-xl bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black"
-          />
-          <input
+            className="w-full p-4 rounded-xl bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black"
+          /></label>
+          <label className="col-span-1 sm:col-span-1">
+            <span className="sr-only">Email address</span>
+            <input
             type="email"
             name="email"
+            autoComplete="email"
             placeholder="Email Address"
             value={formData.email}
             onChange={handleChange}
             required
-            className="col-span-1 sm:col-span-1 p-4 rounded-xl bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black"
-          />
-          <textarea
+            className="w-full p-4 rounded-xl bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black"
+          /></label>
+          <label className="col-span-1 sm:col-span-2">
+            <span className="sr-only">Message</span>
+            <textarea
             name="message"
             placeholder="Write your Message"
             rows="5"
             value={formData.message}
             onChange={handleChange}
             required
-            className="col-span-1 sm:col-span-2 p-4 rounded-xl bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black"
-          />
+            className="w-full p-4 rounded-xl bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black"
+          /></label>
           <button
             type="submit"
+            disabled={loading}
+            aria-live="polite"
             className="col-span-1 sm:col-span-2 bg-black text-white py-3 rounded-xl hover:scale-103 transition-all duration-300 cursor-pointer"
           >
             {loading ? (

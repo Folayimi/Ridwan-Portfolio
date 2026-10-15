@@ -1,289 +1,256 @@
-"use client";
-import React, { use, useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
-const Project = ({ params }) => {
-  const { projectId } = use(params);
-  const [selectedProject, setSelectedProject] = useState("");
-  const [previousLink, setPreviousLink] = useState("");
-  const [nextLink, setNextLink] = useState("");
-  const router = useRouter();
+const projects = [
+  {
+    slug: "alps",
+    title: "Alps",
+    category: "Help and documentation platform",
+    summary:
+      "A customer help platform for creating and organizing useful product documentation and feedback experiences.",
+    role: "Frontend Engineer",
+    client: "Alps",
+    period: "Feb 2024 – Jun 2025",
+    cover: "/alpsFrontPage.PNG",
+    gallery: ["/alps-createArticle.PNG", "/alps-folders.PNG", "/alps-design.PNG", "/alps-domain.PNG", "/alps-reports.PNG"],
+    overview:
+      "Alps brings customer-facing documentation and feedback tools together. I contributed to the frontend experience across content creation, knowledge organization, customization, and feedback-related interfaces.",
+    contributions: [
+      "Built responsive frontend interfaces for articles, playlists, guides, and content organization.",
+      "Worked on themes, domain verification, feedback, and activity-related views.",
+      "Integrated API-backed UI and reusable components within the existing Next.js application.",
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "Redux", "REST APIs"],
+    website: "https://tryalps.com",
+  },
+  {
+    slug: "king-david-elites",
+    title: "King David Elites",
+    category: "Luxury marketplace",
+    summary:
+      "A marketplace experience for discovering real estate, vehicles, luxury services, and collectibles.",
+    role: "Frontend Engineer",
+    client: "King David Elites",
+    cover: "/king-david-main.PNG",
+    gallery: ["/king-david-categ.PNG"],
+    overview:
+      "The product brings multiple premium listing categories into one responsive marketplace. The interface supports browsing and product discovery across the catalog.",
+    contributions: [
+      "Developed responsive marketplace pages and listing interfaces.",
+      "Implemented search, filtering, and custom pagination for catalog discovery.",
+      "Integrated payment and inventory related APIs into the frontend experience.",
+    ],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Redux", "REST APIs"],
+    website: "https://king-david-elite.vercel.app/",
+  },
+  {
+    slug: "curious-kids",
+    title: "Curious Kids",
+    category: "Education",
+    summary:
+      "A school and learning platform designed to make educational content accessible to young learners and educators.",
+    role: "Frontend Engineer",
+    client: "Creos Community",
+    period: "Jul 2023 – Jan 2024",
+    cover: "/curiouzkidz.PNG",
+    gallery: [],
+    overview:
+      "I contributed to responsive web experiences for the Curious Kidz education product, including school management dashboard interfaces.",
+    contributions: [
+      "Translated product designs into responsive interfaces for desktop and mobile.",
+      "Built frontend dashboard views for school administration workflows.",
+      "Collaborated with backend engineers on product features and data integration.",
+    ],
+    technologies: ["Next.js", "Redux", "Tailwind CSS"],
+    website: "https://curiouskidzng.com/",
+  },
+  {
+    slug: "nifinspired",
+    title: "Nifinspired",
+    category: "E-commerce",
+    summary: "A skincare storefront presenting products and editorial content.",
+    role: "Frontend Engineer",
+    client: "Connectin Skillz",
+    cover: "/nifinspired.PNG",
+    gallery: ["/nifinspired-blog1.PNG"],
+    overview:
+      "A consumer skincare web experience for browsing products and brand content.",
+    contributions: [
+      "Built storefront and editorial interfaces for desktop and mobile.",
+      "Connected product experiences with the existing commerce workflow.",
+    ],
+    technologies: ["React", "Tailwind CSS", "Stripe integration"],
+    website: "https://nifinspired.com/",
+  },
+  {
+    slug: "shinzoku",
+    title: "Shinzoku",
+    category: "Hackathon project",
+    summary: "A visual web experience created for a hackathon project.",
+    role: "Frontend contributor",
+    client: "Hackathon team",
+    cover: "/shinzoku.PNG",
+    gallery: ["/shinzoku-path.PNG"],
+    overview: "A story-led project site presenting the Shinzoku concept and world.",
+    contributions: ["Built responsive pages and visual presentation for the project."],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    website: "https://shinzoku.vercel.app/",
+  },
+  {
+    slug: "360-shotitz-photography",
+    title: "360 Shotitz Photography",
+    category: "Photography portfolio",
+    summary: "A portfolio site presenting photography services and selected work.",
+    role: "Frontend Engineer",
+    client: "Freelance",
+    cover: "/360-shotitz.PNG",
+    gallery: [],
+    overview: "A responsive web portfolio designed to showcase photography and services.",
+    contributions: ["Built responsive portfolio and service pages."],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    website: "https://360-shotitz.vercel.app/",
+  },
+  {
+    slug: "remap-link",
+    title: "Remap Link",
+    category: "Automotive services",
+    summary: "A web experience for an automotive ECU tuning service.",
+    role: "Frontend Engineer",
+    client: "Freelance",
+    cover: "/remap-link.PNG",
+    gallery: ["/remap-buildPlates.PNG"],
+    overview: "A responsive service website presenting ECU tuning information and vehicle-related content.",
+    contributions: ["Built service information and responsive vehicle detail interfaces."],
+    technologies: ["Next.js", "Tailwind CSS"],
+    website: "https://the-remap-link.vercel.app/",
+  },
+  {
+    slug: "portfolio",
+    title: "Portfolio Website",
+    category: "Portfolio",
+    summary: "A responsive portfolio website built to present a client’s work and profile.",
+    role: "Frontend Engineer",
+    client: "Freelance",
+    cover: "/clarice-portfolio.PNG",
+    gallery: [],
+    overview: "A compact personal portfolio with project and professional information.",
+    contributions: ["Implemented responsive portfolio sections and project presentation."],
+    technologies: ["Next.js", "Tailwind CSS"],
+    website: "https://clarice-portfolio.vercel.app/",
+  },
+  {
+    slug: "african-made-items",
+    title: "African Made Items",
+    category: "Marketplace concept",
+    summary: "A storefront concept for African-made fashion, art, home decor, and accessories.",
+    role: "Frontend Engineer",
+    cover: "/portfolio-africa.PNG",
+    gallery: [],
+    overview: "A catalog experience highlighting locally made products across several categories.",
+    contributions: ["Built responsive storefront and category presentation."],
+    technologies: ["Next.js", "Tailwind CSS"],
+    website: "https://next-portfolio-africa-devfolas-projects.vercel.app/",
+  },
+];
 
-  const MyProjects = [
-    {
-      title: "Alps",
-      description:
-        "A platform designed to simplify documentation Organize playlists and streamline feedback reviews, All while empowering your customers effortlessly.",
-      mainDescription:
-        "This platform is built to simplify and centralize your documentation process with ease. Seamlessly organize playlists and keep everything structured for better productivity. Streamline the way you collect, manage, and act on feedback from your users. All while creating an empowering experience that puts your customers first, effortlessly.",
-      images: ["/alpsFrontPage.PNG"],
-      technologies: [
-        "Next.js",
-        "PayStack API",
-        "Node.js",
-        "Yoopter Editor",
-        "Tailwind CSS",
-        "Redux",
-      ],
-      link: "/projects/alps",
-      year: "2024",
-      type: "HelpCenter",
-      client: "Alps Ltd.",
-      website: "https://tryalps.com",
-    },
-    {
-      title: "Nifinspired",
-      description:
-        "Our products harness the pure power of nature, utilizing organic ingredients that nurture your skin without harmful chemicals.",
-      mainDescription:
-        "Our products are crafted to harness the raw, rejuvenating power of nature itself. We rely solely on organic ingredients that nourish and protect your skin. Every formula is free from harsh chemicals, ensuring a gentle, natural experience. Embrace skincare that’s as pure, safe, and effective as nature intended.",
-      images: ["/nifinspired.PNG"],
-      technologies: ["React", "StripeAPI", "Tailwind CSS", "PHP"],
-      link: "/projects/nifinspired",
-      year: "2024",
-      type: "E-Commerce",
-      client: "Connectin Skillz",
-      website: "https://nifinspired.com/",
-    },
-    {
-      title: "King David Elites",
-      description:
-        "The King David Elites marketplace is where you find only the most exclusive and highest quality real estate, automobiles, luxury services, and collectibles.",
-      mainDescription:
-        "The King David Elites Marketplace is your gateway to an elite world of distinction. Discover only the most exclusive and top-tier real estate, automobiles, and luxury services. From rare collectibles to refined lifestyle offerings, every listing reflects exceptional quality. This is where sophistication meets exclusivity for those who demand nothing but the best.",
-      images: ["/king-david-main.PNG"],
-      technologies: [
-        "Next.js",
-        "Redux",
-        "Tailwind CSS",
-        "PayStack API",
-        "Node.js",
-      ],
-      link: "/projects/king-david-elites",
-      year: "2022",
-      type: "Real Estate",
-      client: "KDE",
-      website: "https://king-david-elite.vercel.app/",
-    },
-    {
-      title: "Curious Kids",
-      description:
-        "A leading educational platform that sparks curiosity, fosters creativity, and inspires young minds to explore the wonders of the world.",
-      mainDescription:
-        "A premier educational platform designed to ignite curiosity and nurture young, inquisitive minds. We foster creativity through engaging content and interactive learning experiences. Our mission is to inspire exploration and a lifelong love for discovery in children. Empowering the next generation to understand and shape the world around them.",
-      images: ["/curiouzkidz.PNG"],
-      technologies: ["Next.js", "Redux", "Tailwind CSS", "Node.js"],
-      link: "/projects/curious-kids",
-      year: "2023",
-      type: "Education",
-      client: "Creos Community",
-      website: "https://curiouskidzng.com/",
-    },
-    {
-      title: "Shinzoku",
-      description:
-        "In the days of old, the world thrived, life thrived and powerful creatures were born, then it happened, a great invasion the likes of which the world had never seen before, the world was thrown into chaos, and the creatures were forced to flee to a new world.",
-      mainDescription:
-        "In the days of old, the world flourished with harmony—life thrived, civilizations rose, and powerful creatures roamed free, guarding the balance of existence. But then, darkness came. A great invasion descended upon the lands, a force so vast and malevolent that the earth trembled beneath it. Chaos consumed order. The skies turned dark, and kingdoms crumbled. The mighty creatures, once revered, were left with no choice. To survive, they fled—across the stars, through forgotten realms—seeking refuge in a new world, a place untouched by the wrath that shattered their own.",
-      images: ["/shinzoku.PNG"],
-      technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-      link: "/projects/shinzoku",
-      year: "2025",
-      type: "Hackathon",
-      client: "Organizers",
-      website: "https://shinzoku.vercel.app/",
-    },
-    {
-      title: "360 Shotitz Photography",
-      description:
-        "Capturing life’s special moments that last a lifetime with professionalism and innovation since 2013, where every shutter click captures a narrative waiting to be unveiled.",
-      mainDescription:
-        "Capturing life’s most cherished moments with precision, passion, and a creative eye. Since 2013, we’ve turned fleeting seconds into timeless stories through each shutter click. Blending professionalism with innovation, we ensure every frame tells a unique tale. Because behind every image lies a narrative waiting to be revealed.",
-      images: ["/360-shotitz.PNG"],
-      technologies: [
-        "Next.js",
-        "Tailwind CSS",
-        "PayStack API",
-        "Node.js",
-        "Redux",
-        "TypeScript",
-      ],
-      link: "/projects/360-shotitz-photography",
-      year: "2024",
-      type: "Event",
-      client: "FreeLance",
-      website: "https://360-shotitz.vercel.app/",
-    },
-    {
-      title: "Remap Link",
-      description:
-        "By meticulously fine-tuning a vehicle's Engine Control Unit (ECU), we have the capability to extract noteworthy enhancements in power, torque, and fuel efficiency.",
-      mainDescription:
-        "Through precise calibration of a vehicle’s Engine Control Unit (ECU), we unlock remarkable gains in power, torque, and overall performance. This advanced tuning not only elevates driving dynamics, but also promotes improved fuel efficiency without compromising reliability.",
-      images: ["/remap-link.PNG"],
-      technologies: ["Next.js", "Tree.js", "Tailwind CSS"],
-      link: "/projects/remap-link",
-      year: "2024",
-      type: "Vehicle Details",
-      client: "FreeLance",
-      website: "https://the-remap-link.vercel.app/",
-    },
-    {
-      title: "Portfolio",
-      description:
-        "Developed responsive, user portfolio showcasing the projects and skills of the user, built with Next.js and Tailwind CSS.",
-      mainDescription:
-        "Developed a responsive personal portfolio that dynamically showcases user projects, skills, and professional background. Built using Next.js for server-side rendering and routing efficiency, and Tailwind CSS for sleek, mobile-first design. Optimized for performance, accessibility, and seamless user experience across devices.",
-      images: ["/clarice-portfolio.PNG"],
-      technologies: ["Next.js", "Tailwind CSS"],
-      link: "/projects/portfolio",
-      year: "2023",
-      type: "Portfolio",
-      client: "FreeLance",
-      website: "https://clarice-portfolio.vercel.app/",
-    },
-    {
-      title: "African Made Items",
-      description:
-        "Showcasing and selling of varieties of African made items that are durable and cost effective in areas such as Fashion, Arts, Home Decor, Accessories e.t.c",
-      mainDescription:
-        "A curated platform for showcasing and selling a wide variety of African-made products known for their durability and affordability. From fashion and art to home décor and accessories, each item reflects the rich culture and craftsmanship of Africa. Empowering local creators while offering customers unique, high-quality, and meaningful pieces.",
-      images: ["/portfolio-africa.PNG"],
-      technologies: ["Next.js", "Tailwind CSS"],
-      link: "/projects/african-made-items",
-      year: "2023",
-      type: "E-Commerce",
-      client: "",
-      website: "https://next-portfolio-africa-devfolas-projects.vercel.app/",
-    },
-  ];
+function getProject(slug) {
+  return projects.find((project) => project.slug === slug);
+}
 
-  useEffect(() => {
-    for (var i = 0; i < MyProjects.length; i++) {
-      // console.log(
-      //   MyProjects[i].title.replace(/ /g, "-").toLowerCase(),
-      //   projectId
-      // );
-      if (MyProjects[i].title.replace(/ /g, "-").toLowerCase() === projectId) {
-        setSelectedProject(MyProjects[i]);
-        if (i > 0) {
-          setPreviousLink(MyProjects[i - 1].link);
-        }
-        if (i < MyProjects.length - 1) {
-          setNextLink(MyProjects[i + 1].link);
-        }
-      }
-    }
-  }, []);
+export async function generateMetadata({ params }) {
+  const { projectId } = await params;
+  const project = getProject(projectId);
+  if (!project) return { title: "Project not found" };
+  return {
+    title: project.title,
+    description: project.summary,
+    openGraph: { title: `${project.title} | Ogunlade Ridwan`, description: project.summary, images: [project.cover] },
+  };
+}
+
+export default async function ProjectDetailsPage({ params }) {
+  const { projectId } = await params;
+  const project = getProject(projectId);
+  if (!project) notFound();
+
+  const index = projects.findIndex((item) => item.slug === project.slug);
+  const previous = projects[index - 1];
+  const next = projects[index + 1];
+
   return (
-    <>
-      <div className="bg-[#F5F5F5] w-full pt-[80px] pb-[70px] md:px-[100px] lg:px-[200px] px-[20px] cflexsm gap-[30px]">
-        <div className="cflexss w-full gap-[30px] text-[18px]">
-          <div className="w-full flexsm gap-[20px]">
-            <div
-              className="w-[30px] h-[30px] rounded-full bg-white shadow-md flexmm backdrop-blur-2xl cursor-pointer"
-              onClick={() => {
-                router.back();
-              }}
-            >
-              <ChevronLeftIcon width={20} />
-            </div>
-            <h1 className="text-[32px] md:text-[40px] font-[600]">
-              {selectedProject?.title}
-            </h1>
-          </div>
-          {selectedProject && (
-            <div className="p-[10px] md:p-[20px] w-full flexmm rounded-[20px] bg-[#C7C7C7]">
-              <Image
-                src={selectedProject?.images[0]}
-                alt={selectedProject?.images[0]}
-                width={1000}
-                height={1000}
-                className="w-full h-[300px] md:h-[400px] object-cover rounded-[10px]"
-              />
-            </div>
-          )}
-          <p className="text-justify">{selectedProject?.description}</p>
-        </div>
-        <div className="w-full bg-gray-200 p-[30px] text-[16px] cflexss gap-[20px] rounded-[15px]">
-          <div className="w-full cflexss gap-[10px]">
-            <p className="font-[600]">Description</p>
-            <p className="text-justify">{selectedProject?.mainDescription}</p>
-          </div>
-          <hr className="w-full" />
-          <div className="w-full cflexss gap-[10px]">
-            <p className="font-[600]">Technologies</p>
-            <div className="w-full flexsm gap-[20px] flex-wrap">
-              {selectedProject &&
-                selectedProject?.technologies.map((stack, i) => {
-                  return (
-                    <>
-                      <div
-                        key={i}
-                        className="px-[10px] py-[5px] bg-[#E1F9DC] text-[#57AF46] rounded-full text-[14px]"
-                      >
-                        {stack}
-                      </div>
-                    </>
-                  );
-                })}
-            </div>
-          </div>
-          <hr className="w-full" />
-          <div className="w-full flexss flex-wrap gap-[50px] md:gap-[100px] lg:gap-[130px]">
-            <div className="cflexss gap-[10px]">
-              <p className="font-[600]">Year</p>
-              <p>{selectedProject.year}</p>
-            </div>
-            <div className="cflexss gap-[10px]">
-              <p className="font-[600]">Type</p>
-              <p>{selectedProject.type}</p>
-            </div>
-            <div className="cflexss gap-[10px]">
-              <p className="font-[600]">Client</p>
-              <p>{selectedProject.client}</p>
-            </div>
-          </div>
-        </div>
+    <main id="main-content" className="min-h-screen bg-[#f5f5f5] px-4 pb-20 pt-8 text-gray-950 sm:px-6 sm:pt-12 lg:px-8">
+      <article className="mx-auto max-w-6xl">
+        <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-sm text-gray-600">
+          <Link href="/#projects" className="rounded underline-offset-4 hover:text-black hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3f7d35]">Projects</Link>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page" className="truncate text-gray-950">{project.title}</span>
+        </nav>
 
-        <div className="w-full flexbm text-[14px] md:text-[16px] flex-wrap gap-[20px] mt-[20px]">
-          <Link
-            href={selectedProject ? selectedProject?.website : ""}
-            target="_blank"
-          >
-            <div className="flexmm px-[20px] gap-[20px] py-[10px] rounded-[15px] bg-[#1B1B1B] text-white cursor-pointer hover:scale-105 transform transition-all druation-300">
-              <p>View Project</p>
-              <ArrowTopRightOnSquareIcon width={20} />
-            </div>
-          </Link>
+        <header className="grid gap-8 pb-9 md:grid-cols-[minmax(0,1fr)_18rem] md:items-end md:gap-12">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#3f7d35]">{project.category}</p>
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">{project.title}</h1>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-600">{project.summary}</p>
+          </div>
+          <div className="flex flex-wrap gap-3 md:justify-end">
+            <a href={project.website} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#1b1b1b] px-5 font-medium text-white transition-colors hover:bg-[#3f4a3c] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3f7d35]">
+              Visit live project <span className="ml-2" aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
+        </header>
 
-          <div className="w-full md:w-fit flex md:justify-start justify-between items-center gap-[30px]">
-            {previousLink && (
-              <Link href={previousLink}>
-                <button className="group md:text-[16px] flexmm gap-[10px] text-black px-[20px] py-[10px] rounded-[10px] bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
-                  <ChevronLeftIcon className="w-5 h-5 group-hover:mr-2 transition-all duration-300" />
-                  Previous
-                </button>
-              </Link>
-            )}
+        <figure className="overflow-hidden rounded-3xl border border-gray-200 bg-white p-2 shadow-sm sm:p-3">
+          <Image src={project.cover} alt={`${project.title} interface`} width={1600} height={1000} priority className="aspect-[16/10] w-full rounded-2xl object-cover sm:aspect-[16/8]" />
+          <figcaption className="px-3 py-3 text-sm text-gray-500">Project interface</figcaption>
+        </figure>
 
-            {nextLink && (
-              <Link href={nextLink}>
-                <button className="group md:text-[16px] flexmm gap-[10px] text-black px-[20px] py-[10px] rounded-[10px] bg-[#E1E1E1] transition-all duration-300 cursor-pointer">
-                  Next
-                  <ChevronRightIcon className="w-5 h-5 group-hover:ml-2 transition-all duration-300" />
-                </button>
-              </Link>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
+          <div className="space-y-10">
+            <section aria-labelledby="overview-title">
+              <h2 id="overview-title" className="text-2xl font-semibold tracking-tight">Overview</h2>
+              <p className="mt-4 max-w-3xl text-base leading-8 text-gray-600">{project.overview}</p>
+            </section>
+            <section aria-labelledby="contribution-title">
+              <h2 id="contribution-title" className="text-2xl font-semibold tracking-tight">My contribution</h2>
+              <ul className="mt-4 space-y-3">
+                {project.contributions.map((item) => <li key={item} className="flex gap-3 leading-7 text-gray-600"><span aria-hidden="true" className="mt-[0.7rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#3f7d35]" />{item}</li>)}
+              </ul>
+            </section>
+
+            {project.gallery.length > 0 && (
+              <section aria-labelledby="gallery-title">
+                <h2 id="gallery-title" className="text-2xl font-semibold tracking-tight">More screens</h2>
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  {project.gallery.map((image) => (
+                    <figure key={image} className="overflow-hidden rounded-2xl border border-gray-200 bg-white p-2">
+                      <Image src={image} alt={`${project.title} screen`} width={1000} height={700} className="aspect-[4/3] w-full rounded-xl object-cover" />
+                    </figure>
+                  ))}
+                </div>
+              </section>
             )}
           </div>
+
+          <aside className="h-fit rounded-2xl border border-gray-200 bg-white p-6 lg:sticky lg:top-24">
+            <h2 className="text-lg font-semibold">Project details</h2>
+            <dl className="mt-5 space-y-5">
+              <div><dt className="text-xs font-semibold uppercase tracking-wider text-gray-500">My role</dt><dd className="mt-1 font-medium">{project.role}</dd></div>
+              {project.client && <div><dt className="text-xs font-semibold uppercase tracking-wider text-gray-500">Organization</dt><dd className="mt-1 font-medium">{project.client}</dd></div>}
+              {project.period && <div><dt className="text-xs font-semibold uppercase tracking-wider text-gray-500">Period</dt><dd className="mt-1 font-medium">{project.period}</dd></div>}
+            </dl>
+            <div className="mt-6 border-t border-gray-200 pt-5">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Technology</h3>
+              <ul className="mt-3 flex flex-wrap gap-2">{project.technologies.map((technology) => <li key={technology} className="rounded-full bg-[#f2f4f1] px-3 py-1.5 text-sm text-gray-700">{technology}</li>)}</ul>
+            </div>
+          </aside>
         </div>
-      </div>
-    </>
+
+        <nav aria-label="More projects" className="mt-16 grid gap-3 border-t border-gray-200 pt-6 sm:grid-cols-2">
+          {previous ? <Link href={`/projects/${previous.slug}`} className="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-gray-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3f7d35]"><span className="text-xs font-semibold uppercase tracking-wider text-gray-500">Previous project</span><span className="mt-1 block font-semibold">← {previous.title}</span></Link> : <span />}
+          {next ? <Link href={`/projects/${next.slug}`} className="rounded-2xl border border-gray-200 bg-white p-5 text-left transition hover:border-gray-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3f7d35] sm:text-right"><span className="text-xs font-semibold uppercase tracking-wider text-gray-500">Next project</span><span className="mt-1 block font-semibold">{next.title} →</span></Link> : <Link href="/#projects" className="rounded-2xl border border-gray-200 bg-white p-5 text-left font-semibold transition hover:border-gray-400 sm:text-right">Back to all projects →</Link>}
+        </nav>
+      </article>
+    </main>
   );
-};
-
-export default Project;
+}

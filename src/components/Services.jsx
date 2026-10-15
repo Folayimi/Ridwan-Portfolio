@@ -47,10 +47,10 @@ const Services = () => {
       image: "/develope-app.svg",
     },
     {
-      title: "Backend Development",
+      title: "API & Application Integration",
       description:
-        "I craft secure and lightweight APIs using Flask and Python. Built for flexibility and seamless frontend integration.",
-      image: "/code-review.svg",
+        "I connect mobile and web interfaces to REST APIs, authentication, payment, upload, and real-time messaging workflows.",
+      image: "/online-collaboration.svg",
     },
   ];
 

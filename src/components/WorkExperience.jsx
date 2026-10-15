@@ -1,107 +1,91 @@
-"use client"
-import React, { useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { about1 } from "@/atomic-componets/AnimationOrder";
-const WorkExperience = () => {
-  const baseExperience = [
-    {
-      title: "Frontend Developer",
-      company: "FreexIT Technologies",
-      duration: "Jan 2024 - Present",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Connectin Skillz",
-      duration: "Jul 2022 - Feb 2025",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Alps",
-      duration: "Feb 2024 - Jun 2025",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Creos Community",
-      duration: "Jul 2023 - Jan 2024",
-    },
-  ];
+"use client";
+import { motion, useReducedMotion } from "framer-motion";
 
-  const experienceAnimations = baseExperience.map(() => useAnimation());
-  const experienceRefs = baseExperience.map(() => useRef(null));
+const roles = [
+  {
+    title: "Chief Mobile App Engineer",
+    company: "InsureOnGo.com Ltd.",
+    context: "Mar 2025–Present · On site",
+    detail:
+      "Led mobile delivery across Flutter and React Native for iOS and Android, including security architecture, an AI-powered chat feature, and release workflow improvements. Security work reduced vulnerabilities by 70%, while delivery improvements increased feature velocity by 80%.",
+    technologies: "Flutter · React Native · GetX · Dio · Paystack · CI/CD",
+  },
+  {
+    title: "Mobile App Engineer / Development Coordinator",
+    company: "SchoolHouse",
+    context: "Contract · Sep–Oct 2026",
+    detail:
+      "Contributed to a role-based school management app: authentication, school registration, profiles, dashboards, API data flows, and messaging with Socket.IO. Coordinated task priorities and feature integration with another developer.",
+    technologies: "React Native · Expo · TypeScript · Axios · Socket.IO",
+  },
+  {
+    title: "Frontend Engineer",
+    company: "FreexiT Technologies",
+    context: "Jan 2024–Jan 2026 · Remote",
+    detail:
+      "Built responsive interfaces and an admin dashboard with Next.js, TypeScript, and Tailwind CSS; worked with distributed teams on API integration, secure implementation, and CI/CD. Improved Lighthouse scores into the 90s, reduced critical bugs and security incidents by 70%, and raised delivery efficiency by 80% through workflow improvements.",
+    technologies: "Next.js · TypeScript · Tailwind CSS · REST APIs",
+  },
+  {
+    title: "Frontend Engineer",
+    company: "Alps",
+    context: "Feb 2024–Jun 2025 · Remote",
+    detail:
+      "Contributed to a feedback and documentation platform, including articles, playlists, guides, themes, domain verification, and feedback interfaces. Built reusable Next.js components and SEO improvements that increased search visibility by 90%.",
+    technologies: "Next.js · Tailwind CSS · Redux · REST APIs",
+  },
+  {
+    title: "Frontend Engineer",
+    company: "Creos Community · Curious Kidz",
+    context: "Jul 2023–Jan 2024 · Remote",
+    detail:
+      "Built responsive school management dashboard interfaces, translating designs into cross-device views and collaborating with backend engineers on workflows used by hundreds of educators. Contributed to code reviews and performance benchmarking.",
+    technologies: "Next.js · Tailwind CSS",
+  },
+  {
+    title: "Frontend Engineer / Mobile App Engineer",
+    company: "Connectin Skillz · My Bridge International",
+    context: "Frontend Engineer · Jul 2022–Present; Flutter app contributions · 2025–2026",
+    detail:
+      "Frontend work included a shared React component library, API contracts, and performance optimization that reduced initial bundles by 40%. Later Flutter work on the My Bridge International app covered professional connections, product listings, messaging, events, and article/journal submission; Tellimedicines was outside this feature scope.",
+    technologies: "React · Flutter · Dart · REST APIs",
+  },
+];
 
-  const Experience = baseExperience.map((experience, i) => ({
-    ...experience,
-    control: experienceAnimations[i],
-    ref: experienceRefs[i],
-  }));
-
-  const controls1 = useAnimation();
-  const a1 = useRef(null);
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    if (scrollY >= a1.current.offsetTop - 600) {
-      controls1.start("visible");
-    }
-    for (let i = 0; i < Experience.length; i++) {
-      const ref = Experience[i].ref;
-      if (ref?.current && scrollY >= ref.current.offsetTop - 600) {
-        Experience[i].control.start("visible");
-      }
-    }
-  };
-
-  useEffect(() => {
-    const onScroll = () => {
-      window.requestAnimationFrame(handleScroll);
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+export default function WorkExperience() {
+  const reduceMotion = useReducedMotion();
   return (
-    <>
-      <div
-        className="w-full cflexss gap-[30px] mt-[70px] py-[20px] md:border-l-[1px] md:border-r-[1px] rounded-[20px] md:px-[100px] lg:px-[150px]"
-        id="work-experience"
-      >
-        <motion.h1
-          variants={about1}
-          initial="hidden"
-          animate={controls1}
-          ref={a1}
-          className="w-full text-center md:text-left text-[20px] md:text-[25px] font-[500]"
-        >
-          Work Experience
-        </motion.h1>
-        <div className="w-full cflexss gap-[30px]">
-          {/* Add your work experience items here */}
-          {Experience.map((exp, index) => {
-            return (
-              <motion.div
-                variants={about1}
-                initial="hidden"
-                animate={exp.control}
-                ref={exp.ref}
-                key={index}
-                className="bg-white text-[16px] flexbm gap-[10px] p-6 rounded-lg shadow-md w-full flex-wrap"
-              >
-                <p className="text-[#6E6E6E]">{exp.duration}</p>
-                <div className="text-[#6E6E6E] flexsm gap-[10px]  md:gap-[30px] flex-wrap">
-                  <p className="font-[500]"> {exp.title} at</p>
-                  <div className="px-[20px] flexmm gap-[10px] font-[600] text-[14px] rounded-[10px] bg-[#E1F9DC] text-[#3f4a3c] py-[10px] cursor-default">
-                    <div className="w-[8px] h-[8px] bg-[#3f4a3c] rounded-full" />
-                    {exp.company}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-
-          {/* Repeat for more work experiences */}
-        </div>
-      </div>
-    </>
+    <section
+      id="work-experience"
+      aria-labelledby="experience-title"
+      className="mx-auto mt-24 max-w-6xl scroll-mt-24"
+    >
+      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#3f7d35]">
+        Career
+      </p>
+      <h2 id="experience-title" className="mt-2 text-3xl font-semibold tracking-tight">
+        Experience across mobile and web
+      </h2>
+      <ol className="mt-8 space-y-4">
+        {roles.map((role) => (
+          <motion.li
+            key={role.company}
+            className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: reduceMotion ? 0 : 0.4, ease: "easeOut" }}
+            whileHover={reduceMotion ? undefined : { y: -3 }}
+          >
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 className="font-semibold">{role.title} <span className="text-gray-500">·</span> {role.company}</h3>
+              <p className="text-sm text-gray-600">{role.context}</p>
+            </div>
+            <p className="mt-3 max-w-4xl leading-7 text-gray-600">{role.detail}</p>
+            <p className="mt-3 text-sm font-medium text-gray-700">{role.technologies}</p>
+          </motion.li>
+        ))}
+      </ol>
+    </section>
   );
-};
-
-export default WorkExperience;
+}

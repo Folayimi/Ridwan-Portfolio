@@ -1,61 +1,18 @@
-"use client"
-import Marquee from "react-fast-marquee";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiJavascript,
-  SiTypescript,
-  SiPython,
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiFlask,
-  SiPostgresql,
-} from "react-icons/si";
-
-const icons = [
-  { icon: SiReact, color: "#61DAFB", text: "React.js" },
-  { icon: SiNextdotjs, color: "#000000", text: "Next.js" },
-  { icon: SiJavascript, color: "#F7DF1E", text: "JavaScript" },
-  { icon: SiTypescript, color: "#3178C6", text: "TypeScript" },
-  { icon: SiPython, color: "#3776AB", text: "Python" },
-  { icon: SiHtml5, color: "#E34F26", text: "HTML5" },
-  { icon: SiCss3, color: "#1572B6", text: "CSS3" },
-  { icon: SiTailwindcss, color: "#38BDF8", text: "Tailwind CSS" },
-  { icon: SiNodedotjs, color: "#8CC84B", text: "Node.js" },
-  { icon: SiFlask, color: "#000000", text: "Flask" },
-  { icon: SiPostgresql, color: "#336791", text: "PostgreSQL" },
+const groups = [
+  ["Frontend", "React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "React Query", "Responsive UI"],
+  ["Mobile", "Flutter", "Dart", "React Native", "Expo", "Expo Router", "Android builds"],
+  ["State and data", "Redux", "Zustand", "GetX", "React hooks", "REST APIs", "Dio", "Axios", "SQL"],
+  ["Integration and security", "OTP authentication", "OAuth 2.0", "JWT", "Role-based access", "Socket.IO", "WebRTC", "Secure local storage", "File uploads", "Paystack", "WebView"],
+  ["Backend and databases", "Node.js", "Flask", "Python", "PostgreSQL", "Neon", "Drizzle", "SQLAlchemy", "MongoDB", "Redis"],
+  ["Tools and quality", "Git and GitHub", "Android Studio", "VS Code", "EAS Build", "CI/CD", "Docker", "Kubernetes", "AWS", "Azure", "Jest", "Cypress"],
 ];
 
-const Stack = () => {
-  return (
-    <div className="w-full bg-transparent py-6 flexmm mb-[-70px]">
-      <div className="w-[400px] overflow-hidden opacity-[0.6]">
-        <Marquee gradient={false} speed={50} className="h-[50px]">
-          {[...icons, ...icons].map((Icon, i) => (
-            <div
-              key={i}
-              className="flexmm gap-[10px] mx-[30px] hover:scale-110 transition-transform duration-300 cursor-default"
-            >
-              <Icon.icon
-                key={i}
-                style={{ color: "black" }}
-                className={`w-7 h-7`}
-              />
-              <span
-                key={`${i}-text`}
-                className="text-black/70 text-sm font-semibold italic"
-                // style={{ color: Icon.color }}
-              >
-                {Icon.text}
-              </span>
-            </div>
-          ))}
-        </Marquee>
-      </div>
+export default function Stack() {
+  return <section aria-labelledby="skills-title" className="mx-auto mt-24 max-w-6xl">
+    <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#3f7d35]">Toolkit</p>
+    <h2 id="skills-title" className="mt-2 text-3xl font-semibold tracking-tight">Technical skills</h2>
+    <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {groups.map(([title, ...skills]) => <div key={title} className="rounded-2xl border border-gray-200 bg-white p-5"><h3 className="font-semibold">{title}</h3><ul className="mt-4 flex flex-wrap gap-2">{skills.map((skill) => <li key={skill} className="rounded-full bg-gray-100 px-2.5 py-1.5 text-sm text-gray-700">{skill}</li>)}</ul></div>)}
     </div>
-  );
-};
-
-export default Stack;
+  </section>;
+}
